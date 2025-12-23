@@ -1,0 +1,346 @@
+1️⃣ Cơ số là gì?
+
+Cơ số (基数): số lượng ký tự dùng để biểu diễn số.
+
+Trong FE hay ra 4 loại:
+
+Cơ số  	Tên  	Ký hiệu	  Ví dụ
+2	  Nhị phân	(2進数)	  1011
+8  	Bát phân	(8進数)  	17
+10	Thập phân	(10進数)  	11
+16	Thập lục phân	(16進数)	B, 1F
+
+👉 16 tiến có thêm chữ:
+A=10, B=11, C=12, D=13, E=14, F=15
+
+
+2️⃣ Nhị phân → Thập phân (2 → 10)
+Cách làm
+
+👉 Nhân từng bit với 2ⁿ rồi cộng lại
+
+Ví dụ:
+
+1011(2)
+= 1×2³ + 0×2² + 1×2¹ + 1×2⁰
+= 8 + 0 + 2 + 1
+= 11(10)
+📌 Thi FE rất hay ra dạng này
+
+
+3️⃣ Thập phân → Nhị phân (10 → 2)
+ÁP DỤNG ➡ Dạng: 8 – 4 – 2 – 1
+✅ CÁCH 1 (TỐT NHẤT – KHÔNG CẦN THUỘC)
+
+👉 Viết số hex thành tổng 8-4-2-1
+
+Ví dụ: 9
+9 = 8 + 1
+
+8	4	2	1
+1	0	0	1
+
+➡ 1001
+
+NẾU SỐ THẬP PHÂN LỚN CÓ THỂ DÙNG CÁCH 2: TỪ THẬP PHÂN → HEX → NHỊ PHÂN (siêu nhanh)
+👉 FE ra rất nhiều câu có HEX
+
+Bước:
+
+  1️⃣ Đổi 10 → 16 (chia cho 16, rất ít bước)
+  2️⃣ Mỗi 1 hex = 4 bit
+
+Ví dụ: 156(10)
+156 ÷ 16 = 9 dư 12 → C
+9 ÷ 16 = 0 dư 9
+→ 9C(16)
+ N
+Hex → nhị phân:
+9  → 1001
+C  → 1100 
+
+➡ 10011100(2)
+
+⏱ Cực nhanh – cực chuẩn FE
+
+✅ĐỐI VỚI SỐ THẬP PHÂN 
+VÍ DỤ 107.25(10) SANG NHỊ PHÂN
+  Bước 1: 👉 Nhân phần thập phân với 2
+  Ví dụ: 0.25
+  0.25 × 2 = 0.5  → 0
+  0.5 × 2 = 1.0   → 1 (dừng)
+  ➡ đọc theo thứ tự: 0.01(2)
+
+📦 Áp dụng cho 117.25
+Phần nguyên
+117 = 64 + 32 + 16 + 4 + 1
+→ 1110101(2)
+
+Phần thập phân
+0.25 = 0.01(2)
+KẾT QUẢ:
+➡ 117.25(10) = 1110101.01(2)
+
+
+
+4️⃣ Nhị phân ↔ Bát phân (2 ↔ 8)
+
+👉 3 bit = 1 chữ số bát phân
+Nhị phân	Bát phân
+  000      	0
+  001	      1
+  010	      2
+  011	      3
+  100	      4
+  101	      5
+  110	      6
+  111	      7
+
+Ví dụ:
+  
+  101011(2)
+  → 101 | 011
+  → 5   | 3
+  → 53(8)
+
+
+📌 Không cần tính toán – chỉ nhóm bit
+
+5️⃣ Nhị phân ↔ Thập lục phân (2 ↔ 16)
+
+👉 4 bit = 1 chữ số hex
+
+Nhị phân	Hex
+    0000	0
+    1001	9
+    1010	A
+    1011	B
+    1100	C
+    1111	F
+
+Ví dụ:
+  
+  10111100(2)
+  → 1011 | 1100
+  → B    | C
+  → BC(16)
+
+
+6️⃣ Thập lục phân → Thập phân (16 → 10)
+
+👉 Nhân với 16ⁿ
+
+Ví dụ:
+
+  1F(16)
+  = 1×16¹ + F×16⁰
+  = 16 + 15
+  = 31(10)
+
+
+
+   TƯ DUY QUAN TRỌNG ĐỂ KHÔNG BỊ RỐI
+Trường hợp	Cách dùng
+HEX → 2	8421
+2 → HEX	nhóm 4 bit
+10 → 2 (số lớn)	bảng 2ⁿ
+10 → 2 (thi FE)	đi vòng qua HEX
+
+
+
+7️⃣ Cơ số 8,16 → Nhị phân (8/16 sang nhị phân)
+🔑 NGUYÊN TẮC VÀNG (chỉ cần nhớ 2 dòng)
+
+  Cơ số 8 → nhị phân: 1 chữ = 3 bit
+  Cơ số 16 → nhị phân: 1 chữ = 4 bit
+
+  📌Ví dụ:
+    8 = 2³
+    16 = 2⁴
+
+ CƠ SỐ 8 → NHỊ PHÂN (3 bit)
+  Bảng cần nhớ (rất ngắn)
+  Bát phân	Nhị phân
+    0     	000
+    1	      001
+    2	      010
+    3	      011
+    4	      100
+    5	      101
+    6	      110
+    7	      111
+
+  Ví dụ
+  6(8) → 110(2)
+
+
+  157(8)
+  → 1   | 5   | 7
+  → 001 | 101 | 111
+  → 001101111(2)
+
+* SO SÁNH NHANH (để không nhầm)
+Cơ số	      Số bit / chữ	      Cách làm
+8	           3 bit	           tra bảng
+16	        4 bit	               8421  
+
+  CƠ SỐ 16 → NHỊ PHÂN (4 bit)
+    Bảng cần nhớ (rất ngắn)
+    Hex	Nhị phân
+      0     	0000
+      1	      0001
+      2	      0010
+      3	      0011
+      4	      0100
+      5	      0101
+      6	      0110
+      7	      0111
+      8	      1000
+      9	      1001
+      A	      1010
+      B	      1011
+      C	      1100
+      D	      1101
+      E	      1110
+      F	      1111
+  
+    Ví dụ
+    B(16) → 1011(2)
+
+
+🎯 CÂU CHỐT ĐỂ NHỚ
+8 = 2³ → 3 bit
+16 = 2⁴ → 4 bit
+Không chia – không tính – chỉ nhóm
+
+
+
+🔢 Hệ nhị phân số âm là gì?
+
+👉 Số âm trong nhị phân KHÔNG viết dấu “−” như thập phân.
+👉 Máy tính dùng mã bù 2 (Two’s Complement / 2の補数) để biểu diễn số âm.
+
+📌 FE Nhật hỏi gần như 100% là mã bù 2.
+
+  0 → số dương
+
+  1 → số âm
+
+3️⃣ Cách tạo số âm (quan trọng nhất)
+
+Giả sử dùng 8 bit (hay ra thi FE).
+
+Ví dụ: tạo -5
+Bước 1️⃣: Viết +5 ở nhị phân
+5 = 00000101
+
+Bước 2️⃣: Đảo bit (bù 1)
+00000101 → 11111010
+
+Bước 3️⃣: +1 (bù 2)
+11111010 + 1 = 11111011
+
+
+➡ −5 = 11111011 (8 bit)
+
+
+===============================================================
+
+ CỘNG – TRỪ – NHÂN – CHIA trong nhị phân
+🔢 1️⃣ CỘNG NHỊ PHÂN (dễ nhất)
+Quy tắc (chỉ 4 dòng)
+Phép	Kết quả
+0 + 0	0
+0 + 1	1
+1 + 0	1
+1 + 1	10 (viết 0, nhớ 1)
+10 + 1	11 (viết 1, nhớ 1)
+11 + 1	100 (viết 0, nhớ 1)
+
+  Ví dụ
+    1011
+  + 0110
+  ------
+   10001
+
+  🔢 2️⃣ TRỪ NHỊ PHÂN (CÁCH DỄ NHẤT)
+
+👉 KHÔNG trừ trực tiếp, mà:
+
+Trừ = cộng với số âm (bù 2)
+Ví dụ: 7 − 3
+7 = 0111
+3 = 0011
+
+Tạo −3:
+
+0011 → đảo bit → 1100
+1100 + 1 = 1101
+
+Cộng:
+
+ 0111
++1101
+------
+100100  (bỏ bit thừa)
+
+
+➡ 0100 = 4
+
+📌 Cách này dễ hơn mượn bit
+
+🔢 3️⃣ NHÂN NHỊ PHÂN (giống hệt thập phân)
+
+👉 Nhân từng bit rồi dịch trái
+
+Nhân	Kết quả
+×0	0
+×1	giữ nguyên
+
+Ví dụ: 5 × 3
+        101
+      × 011
+      -----
+        101
+      1010
+      -----
+      1111
+  
+➡ 15(10)
+
+📌 Nhân 1 → giữ
+📌 Nhân 0 → bỏ
+📌 Dịch trái khi xuống dòng
+
+🔢 4️⃣ CHIA NHỊ PHÂN (dễ nhất kiểu FE)
+
+👉 Chia cho 2ⁿ = dịch phải
+
+Ví dụ
+1000 ÷ 10 = 100   (÷2)
+1000 ÷ 100 = 10   (÷4)
+
+
+📌 Khi thi FE:
+
+Thường chỉ hỏi chia cho 2, 4, 8
+
+⚠️ Nếu chia không phải 2ⁿ
+
+👉 FE thường đổi về thập phân hoặc hex rồi so
+
+🧠 MẸO NHỚ SIÊU NGẮN
+
+➕ Cộng → nhớ khi 1+1
+
+➖ Trừ → đổi sang cộng bù 2
+
+✖ Nhân → nhân 0/1 + dịch trái
+
+➗ Chia → dịch phải (nếu chia 2ⁿ)
+
+🎯 CÂU CHỐT PHẢI NHỚ
+
+Nhị phân dễ vì chỉ có 0 và 1
+Trừ = cộng bù 2
+Nhân / chia = dịch bit
