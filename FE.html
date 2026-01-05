@@ -292,6 +292,18 @@ Cộng:
 🔢 3️⃣ NHÂN NHỊ PHÂN (giống hệt thập phân)
 
 👉 Nhân từng bit rồi dịch trái
+2️⃣ Dạng câu FE thích ra nhất
+🔹 Dạng 1: Nhận biết dịch bit
+
+    00100000 >> 3 = ?
+  → 32 ÷ 8 = 4
+🔹 Dạng 2: Hỏi quan hệ
+
+Dịch trái 1 bit tương đương phép toán nào?
+
+✅ Nhân 2
+
+
 
 Nhân	Kết quả
 ×0	0
@@ -344,3 +356,293 @@ Thường chỉ hỏi chia cho 2, 4, 8
 Nhị phân dễ vì chỉ có 0 và 1
 Trừ = cộng bù 2
 Nhân / chia = dịch bit
+
+===============================================================
+
+Cấu trúc dữ liệu cơ bản
+
+🔥 1. Mảng (Array – 配列) [CỰC KỲ QUAN TRỌNG]
+
+📌 Ra nhiều nhất
+
+Hay hỏi:
+
+Truy cập phần tử theo index
+
+Mảng 1 chiều, 2 chiều
+
+Mô phỏng for / while
+
+Thêm – xóa phần tử (phải dịch phần tử)
+
+Ví dụ:
+A = [3, 5, 7, 9]
+A[2] = ?
+
+
+➡️ Đáp án: 7
+
+👉 Mẹo thi FE
+
+Index thường bắt đầu từ 0
+
+Cẩn thận vòng lặp chạy tới < n hay <= n-1
+
+🔥 2. Ngăn xếp – Stack (スタック)
+
+📌 Rất hay ra
+
+Đặc điểm:
+
+LIFO (Last In – First Out)
+
+Push / Pop
+
+Dạng câu hỏi:
+
+Mô phỏng các bước push/pop
+
+Tính phần tử trên cùng (top)
+
+Ví dụ:
+Push 1 → Push 2 → Pop → Push 3
+
+
+➡️ Stack cuối: [1, 3]
+➡️ Top = 3
+
+👉 Nhớ kỹ:
+
+Pop → lấy ra phần tử mới nhất
+
+🔥 3. Hàng đợi – Queue (キュー)
+
+📌 Ra ít hơn stack nhưng vẫn rất đều
+
+Đặc điểm:
+
+FIFO (First In – First Out)
+
+Enqueue / Dequeue
+
+Dạng hay gặp:
+
+Mô phỏng thứ tự ra khỏi hàng
+
+So sánh Queue vs Stack
+
+Ví dụ:
+Enqueue A → Enqueue B → Dequeue → Enqueue C
+
+
+➡️ Queue cuối: [B, C]
+
+🔥 4. Danh sách liên kết – Linked List (連結リスト)
+
+📌 Hay ra ở mức lý thuyết + mô phỏng nhẹ
+
+Hỏi về:
+
+Node (data + pointer)
+
+Thêm / xóa node
+
+Khác gì với mảng
+
+So sánh hay ra:
+Mảng	Linked List
+Truy cập nhanh	Truy cập chậm
+Khó chèn/xóa	Chèn/xóa dễ
+Cần bộ nhớ liên tục	Không cần
+🔥 5. Cây nhị phân – Binary Tree (2分木)
+
+📌 Ra khá nhiều, nhất là phần duyệt cây
+
+Hay hỏi:
+
+Preorder / Inorder / Postorder
+
+Cấu trúc cây
+
+Nhớ thứ tự:
+
+Preorder: Root – Left – Right
+
+Inorder: Left – Root – Right
+
+Postorder: Left – Right – Root
+
+👉 Inorder của BST → ra dãy tăng dần
+
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+Thuật toán sắp xếp
+🔥 1. Bubble Sort (バブルソート) Sắp xếp nổi bọt
+📌 Rất hay ra FE
+Ý tưởng:
+So sánh từng cặp phần tử kề nhau
+Nếu sai thứ tự thì đổi chỗ
+Ví dụ:
+A = [5, 3, 8, 4]
+Pass 1: [3, 5, 4, 8]
+Pass 2: [3, 4, 5, 8]
+➡️ Kết quả: [3, 4, 5, 8]
+
+🔥 2. Selection Sort (選択ソート) Sắp xếp chọn
+
+📌 Rất hay ra FE
+Ý tưởng:
+Tìm phần tử nhỏ nhất trong mảng. TÌM Min trong mảng
+Đổi chỗ với phần tử đầu tiên
+Lặp lại cho các phần tử còn lại
+Ví dụ:
+A = [5, 3, 8, 4] Min trong mảng là 3, đổi với 5
+Pass 1: [3, 5, 8, 4] Min trong mảng còn lại là 4, đổi với 5
+Pass 2: [3, 4, 8, 5] Min trong mảng còn lại là 5, đổi với 8
+Pass 3: [3, 4, 5, 8] 
+➡️ Kết quả: [3, 4, 5, 8] 
+
+🔥 3. Insertion Sort (挿入ソート) Sắp xếp chèn
+
+📌 Rất hay ra FE
+Ý tưởng:
+Chèn từng phần tử vào vị trí đúng trong mảng đã sắp xếp, hoặc gần sắp xếp
+Ví dụ:
+A = [5, 3, 8, 4] So sánh: 3 < 5 → dịch 5 sang phải
+Pass 1: [3, 5, 8, 4]  So sánh: 8 > 5 → giữ nguyên
+Pass 2: [3, 5, 8, 4]  So sánh: 4 < 8 → dịch 8 sang phải; 4 < 5 → dịch 5 sang phải
+Pass 3: [3, 4, 5, 8]  
+➡️ Kết quả: [3, 4, 5, 8]
+
+🔥 4. Quick Sort (クイックソート) Sắp xếp nhanh
+
+📌 Rất hay ra FE
+Ý tưởng:
+Chọn phần tử pivot
+Phân chia mảng thành hai phần: nhỏ hơn pivot và lớn hơn pivot
+Đệ quy sắp xếp hai phần
+Ví dụ:
+A = [5, 3, 8, 4]
+Chọn pivot = 5
+Phân chia: [3, 4] và [8]
+Sắp xếp đệ quy: [3, 4] và [8]
+➡️ Kết quả: [3, 4, 5, 8]
+
+🔥 5. Merge Sort (マージソート) Sắp xếp trộn
+
+📌 Rất hay ra FE
+Ý tưởng:
+Chia mảng thành hai phần bằng nhau
+Đệ quy sắp xếp hai phần
+Trộn hai phần đã sắp xếp lại
+Ví dụ:
+A = [5, 3, 8, 4]
+Chia: [5, 3] và [8, 4]
+Sắp xếp: [3, 5] và [4, 8]
+Trộn: [3, 4, 5, 8]
+➡️ Kết quả: [3, 4, 5, 8]
+
+######################################################
+TÌM KIẾM
+
+ 🔥Tìm kiếm tuyến tính 
+📌 Rất hay ra FE
+Ý tưởng:
+Duyệt từng phần tử trong mảng
+Ví dụ:
+A = [5, 3, 8, 4], tìm 4
+➡️ Kết quả: A[3]
+
+🔥Tìm kiếm nhị phân
+📌 Rất hay ra FE
+Ý tưởng:
+So sánh phần tử cần tìm với phần tử giữa mảng
+Nếu bằng → tìm thấy
+Nếu nhỏ hơn → tìm trong nửa trái
+Nếu lớn hơn → tìm trong nửa phải
+Ví dụ:
+A = [3, 4, 5, 8], tìm 5
+➡️ Kết quả: A[2]
+
+🔥Tìm kiếm ánh xạ (Hash code) 
+📌 Ít ra FE hơn nhưng vẫn quan trọng
+Ý tưởng:
+Dùng hàm băm để tính vị trí của phần tử trong bảng băm
+Ví dụ:
+A = [3, 4, 5, 6, 9, 8], tìm 5
+Hash(5) = 2
+➡️ Kết quả: A[2]
+
+Tăng tốc độ tìm kiếm bằng giá trị hash nhưng có thể xảy ra xung đột dữ liệu
+
+🔥Thuật toán hồi quy  
+📌 Rất hay ra FE
+Ý tưởng:
+Gọi lại chính hàm đó với các tham số khác
+Ví dụ:
+Công thức
+f(x) =
+1 ( khi x <= 1)
+x + f(x - 1) ( khi x > 1)
+f(5) = 5 + f(4)
+= 5 + 4 + f(3)
+= 5 + 4 + 3 + f(2)
+= 5 + 4 + 3 + 2 + f(1)
+= 5 + 4 + 3 + 2 + 1 = 15
+➡️ Kết quả: 15
+ 
+######################################################
+(n) : Độ phức tạp
+(計算量)
+Độ phức tạp của các thuật toán
+O(n) , O(n²),...có nghĩa là gì ?  
+Khi lượng dữ liệu tăng 2 lần thì lượng tính toán cũng tăng 2 lần, 3 lần thì lượng tính toán cũng tăng 3 lần
+Ví dụ:
+Thuật toán A: O(n)
+Khi dữ liệu là 10 thì tính toán là 10
+Khi dữ liệu là 100 thì tính toán là 100
+Thuật toán B: O(n²)
+Khi dữ liệu là 10 thì tính toán là 100
+Khi dữ liệu là 100 thì tính toán là 10,000
+
+🔥 Độ phức tạp của các thuật toán sắp xếp phổ biến
+Thuật toán	        Độ phức tạp
+Bubble Sort	    O(n²) ➡️ バブルソート
+Selection Sort	O(n²) ➡️ 選択ソート
+Insertion Sort	O(n²) ➡️ 挿入ソート
+Quick Sort	    O(n log n) ➡️ クイックソート
+Merge Sort	    O(n log n) ➡️ マージソート
+
+🔥 Độ phức tạp của các thuật toán tìm kiếm phổ biến
+Thuật toán	        Độ phức tạp
+Tìm kiếm tuyến tính	O(n) ➡️ 線形探索
+Tìm kiếm nhị phân	O(log n) ➡️ 二分探索
+Tìm kiếm ánh xạ (Hash)	O(1) trung bình, O(n) tệ nhất ➡️ ハッシュ探索
+
+
+🔥 Độ phức tạp của các cấu trúc dữ liệu phổ biến
+Cấu trúc dữ liệu	Thời gian truy cập	Thời gian chèn/xóa
+Mảng (Array)	        O(1)	            O(n)
+Danh sách liên kết (Linked List)	O(n)	            O(1)
+Ngăn xếp (Stack)	    O(1)	            O(1)
+Hàng đợi (Queue)	    O(1)	            O(1)
+Cây nhị phân tìm kiếm (🌳 木構造 )  	O(log n)	      O(log n)
+
+
+Đệ Quy 再帰・分割統治（Recursion / Divide & Conquer）
+再帰フィボナッチ
+👉 O(2ⁿ)
+
+動的計画法（DP）フィボナッチ
+👉 O(n)
+
+🔥 Cách đọc độ phức tạp
+O(1) : Hằng số
+O(log n) : Lô-ga-rít
+O(n) : Tuyến tính
+O(n log n) : Tuyến tính lô-ga-rít
+O(n²) : Bình phương
+🔥 MẸO NHỚ ĐỘ PHỨC TẠP
+➕ Độ phức tạp càng thấp càng tốt
+➖ O(1) < O(log n) < O(n) < O(n log n) < O(n²)
+➗ Thuật toán chia để trị thường có độ phức tạp O(n log n)
+===============================================================
