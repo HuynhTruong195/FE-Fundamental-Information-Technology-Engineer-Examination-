@@ -1007,12 +1007,13 @@ Sao chép y hệt dữ liệu sang ổ khác (mirroring)(ミラーリング)
 ❌ Tốn dung lượng (50%)
 
 🔹 RAID 5 – Cân bằng (ra đề FE nhiều)
-
+Chia đều dữ liệu và dùng mã parity để sửa lỗi
+	Parity = dữ liệu kiểm tra dùng để phục hồi dữ liệu khi ổ đĩa bị hỏng.
 Cần ≥ 3 ổ
 
 Có parity (dữ liệu phục hồi)
 
-1 ổ hỏng → vẫn hoạt động
+chịu 1 ổ hỏng → vẫn hoạt động
 
 📌 Phổ biến trong server
 
@@ -1021,3 +1022,4 @@ Có parity (dữ liệu phục hồi)
 Giống RAID 5 nhưng có 2 parity
 
 Chịu được 2 ổ hỏng
+
