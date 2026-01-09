@@ -859,3 +859,165 @@ Lỗi lệnh
 Do chương trình gọi
 
 Ví dụ: system call
+
+===============================================================
+################################################################
+🔥🔥🔥🔥CƠ CHẾ NGẮT🔥🔥🔥🔥🔥🔥🔥🔥
+  Phân loại theo cấu trúc hệ thống
+システム構成による分類
+1️⃣ 集中処理システム（Hệ thống xử lý tập trung）
+
+Xử lý tập trung tại một máy chủ trung tâm
+
+Terminal chỉ nhập/xuất dữ liệu
+
+Ưu: quản lý dễ
+
+Nhược: lỗi 1 điểm → toàn hệ thống dừng
+
+2️⃣ 分散処理システム（Hệ thống xử lý phân tán）
+
+Nhiều máy cùng xử lý, chia tải
+
+Ưu: mở rộng tốt, độ tin cậy cao
+
+Nhược: quản lý phức tạp
+
+3️⃣ クライアント・サーバシステム（Client–Server）
+
+Client yêu cầu, Server xử lý
+
+Dạng phổ biến của phân tán
+
+Ví dụ: Web, DB Server
+
+4️⃣ デュアルシステム (Dual System) hoặc デュプレックスシステム (Duplex System)
+
+ sử dụng hai máy chủ giống nhau hoạt động song song để đảm bảo tính sẵn sàng cao.
+Nếu một máy gặp sự cố, máy còn lại sẽ tiếp tục hoạt động mà không làm gián đoạn dịch vụ.
+
+Nhược: kiểm soát khó
+
+⚠️ Có hai loại chính:
+ホットスタンバイ (Hot Standby): Máy dự phòng luôn chạy song song và có thể tiếp quản ngay lập tức.
+
+コールドスタンバイ (Cold Standby): Máy dự phòng không hoạt động cho đến khi máy chính gặp sự cố.
+
+
+🔥🔥🔥🔥 Độ tin cậy và cách duy trì hoạt động của hệ thống🔥🔥🔥🔥
+  🔹 フォールトトレランス（Fault Tolerance）
+
+Hệ thống không dừng dù có lỗi
+
+Tự động chuyển sang hệ thống dự phòng
+
+🔹 フェールセーフ（Fail Safe）
+
+Khi lỗi → chuyển sang trạng thái an toàn
+
+Ưu tiên an toàn hơn tiếp tục hoạt động
+
+🔹 フェールソフト（Fail Soft）
+
+Khi lỗi → giảm chức năng, vẫn chạy được phần quan trọng
+  
+  🔹 Fool-proof（フールプルーフ）
+
+Hệ thống được thiết kế để người dùng thao tác sai cũng không ảnh hưởng tới 
+hoạt động
+
+  
+🔹 冗長化（Redundancy – Dự phòng）
+
+Chuẩn bị nhiều thành phần giống nhau
+
+Khi 1 cái lỗi → cái khác thay thế
+
+Ví dụ:
+
+二重化 (dual system)
+
+多重化 (multiple)
+
+  1️⃣ 信頼性（Reliability – Độ tin cậy）
+
+→ Khả năng hệ thống hoạt động bình thường trong một khoảng thời gian nhất định
+
+Chỉ số thường gặp:
+
+MTBF（平均故障間隔）: Thời gian trung bình giữa 2 lần lỗi
+→ càng lớn càng tốt
+
+MTTR（平均修復時間）: Thời gian sửa chữa trung bình
+→ càng nhỏ càng tốt
+
+2️⃣ 可用性（Availability – Khả năng sẵn sàng）
+
+→ Xác suất hệ thống có thể sử dụng tại một thời điểm
+
+Công thức FE hay ra:
+
+可用性=  MTBF / (MTBF+MTTR)
+	​
+
+  ⚠️ Mẹo nhớ nhanh FE
+
+信頼性: “có hay không lỗi”
+
+可用性: “có dùng được không”
+
+冗長化: thêm đồ dự phòng
+
+FT: lỗi vẫn chạy
+
+FS: lỗi thì an toàn
+
+FP: thao tác sai vẫn chạy
+  
+Fail soft: lỗi nhưng vẫn chạy một phần
+
+🔥🔥🔥🔥RAID là gì?🔥🔥
+  RAID (Redundant Array of Independent Disks)
+→ Kỹ thuật ghép nhiều ổ cứng thành 1 hệ thống để:
+
+✅ Tăng độ tin cậy (chống mất dữ liệu)
+
+✅ Tăng tốc độ
+
+Hoặc cả hai
+
+Các mức RAID hay gặp (FE rất hay hỏi)
+  
+🔹 RAID 0 – Tăng tốc (KHÔNG an toàn)
+
+Chia dữ liệu ra nhiều ổ (striping)(ストライピング)
+
+Nhanh
+
+❌ 1 ổ hỏng → mất hết dữ liệu
+
+📌 Không có dự phòng
+
+🔹 RAID 1 – An toàn
+
+Sao chép y hệt dữ liệu sang ổ khác (mirroring)(ミラーリング)
+
+1 ổ hỏng → vẫn chạy
+
+❌ Tốn dung lượng (50%)
+
+🔹 RAID 5 – Cân bằng (ra đề FE nhiều)
+
+Cần ≥ 3 ổ
+
+Có parity (dữ liệu phục hồi)
+
+1 ổ hỏng → vẫn hoạt động
+
+📌 Phổ biến trong server
+
+🔹 RAID 6
+
+Giống RAID 5 nhưng có 2 parity
+
+Chịu được 2 ổ hỏng
