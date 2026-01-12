@@ -939,32 +939,7 @@ Ví dụ:
 
 多重化 (multiple)
 
-  1️⃣ 信頼性（Reliability – Độ tin cậy）
-
-→ Khả năng hệ thống hoạt động bình thường trong một khoảng thời gian nhất định
-
-Chỉ số thường gặp:
-
-MTBF（平均故障間隔）: Thời gian trung bình giữa 2 lần lỗi
-→ càng lớn càng tốt
-
-MTTR（平均修復時間）: Thời gian sửa chữa trung bình
-→ càng nhỏ càng tốt
-
-2️⃣ 可用性（Availability – Khả năng sẵn sàng）
-
-→ Xác suất hệ thống có thể sử dụng tại một thời điểm
-
-Công thức FE hay ra:
-
-可用性=  MTBF / (MTBF+MTTR)
-	​
-
-  ⚠️ Mẹo nhớ nhanh FE
-
-信頼性: “có hay không lỗi”
-
-可用性: “có dùng được không”
+  
 
 冗長化: thêm đồ dự phòng
 
@@ -1023,3 +998,227 @@ Giống RAID 5 nhưng có 2 parity
 
 Chịu được 2 ổ hỏng
 
+🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠
+Chỉ số tính năng của hệ thống
+🔥 システム性能指標（Chỉ số hiệu năng hệ thống）
+1️⃣ スループット（Throughput） ⭐⭐⭐
+
+単位時間あたりに処理できる仕事量
+
+Số lượng công việc xử lý trong 1 đơn vị thời gian
+
+📌 Ví dụ
+10件 / 秒
+
+👉 FE rất thích hỏi cái này
+
+2️⃣ 応答時間（Response Time） ⭐⭐⭐
+
+要求してから結果が返るまでの時間
+
+Thời gian từ lúc gửi yêu cầu đến lúc nhận kết quả
+
+👉 Quan trọng cho hệ thống tương tác
+
+3️⃣ ターンアラウンドタイム（Turnaround Time）
+
+ジョブ投入から終了までの時間
+
+Thời gian từ lúc đầu đến khi kết thúc công việc
+
+4️⃣ 待ち時間（Waiting Time）
+
+CPUを待っている時間
+
+Thời gian chờ CPU
+
+5️⃣ CPU利用率（CPU Utilization） ⭐⭐
+
+CPUが仕事をしている割合
+
+Tỷ lệ CPU đang bận
+
+6️⃣ レイテンシ（Latency）
+
+処理の遅延時間
+
+Độ trễ
+
+🔥 ベンチマークテスト（Benchmark Test）
+🇯🇵
+
+標準的なプログラムを実行して，
+コンピュータの性能を測定する方法
+
+Chạy chương trình chuẩn để
+đo hiệu năng hệ thống
+
+🎯 Mục đích
+
+So sánh CPU
+
+So sánh server
+
+So sánh hệ thống
+
+👉 FE hay hỏi: benchmark dùng để so sánh hiệu năng
+
+🧠 Đo cái gì?
+指標	      Nghĩa
+処理時間	Thời gian xử lý
+スループット	Lượng xử lý
+応答時間	Response time
+CPU使用率	CPU utilization
+
+Kế hoạch dung lượng
+🔥 キャパシティプランニング（Capacity Planning）
+Scale-out: Thêm máy chủ để tăng hiệu năng tổng thể
+Scale-up: Nâng cấp phần cứng máy chủ hiện có để tăng hiệu năng 
+
+=============================================================
+R-A-S-I-S（信頼性指標） chỉ số độ tin cậy
+🔥 R-A-S-I-S 指標（Reliability, Availability, Serviceability, Integrity, Scalability）
+1️⃣ R: Reliability（信頼性）
+Hệ thống hoạt động đúng chức năng trong thời gian dài mà không bị lỗi
+2️⃣ A: Availability（可用性）
+Hệ thống luôn sẵn sàng để sử dụng khi cần thiết
+3️⃣ S: Serviceability（保守性）
+Dễ dàng bảo trì, sửa chữa và nâng cấp hệ thống
+4️⃣ I: Integrity（完全性）
+Dữ liệu và hệ thống không bị thay đổi hoặc hỏng hóc một cách trái phép
+5️⃣ S: Security（安全性）
+Hệ thống được bảo vệ khỏi các mối đe dọa và truy cập trái phép
+=============================================================
+
+MTBF (Mean Time Between Failures) : Thời gian trung bình giữa các lần hệ thống gặp sự cố.
+→ MTBF càng lớn thì hệ thống càng đáng tin cậy.
+
+Chỉ số thường gặp:
+MTBF（平均故障間隔）: Thời gian trung bình giữa 2 lần lỗi
+→ càng lớn càng tốt
+
+
+MTBR（平均修復時間）: Thời gian sửa chữa trung bình
+→ càng nhỏ càng tốt
+
+
+2️⃣ 可用性（Availability – Khả năng sẵn sàng）
+
+→ Xác suất hệ thống có thể sử dụng tại một thời điểm
+
+Công thức FE hay ra:
+
+可用性=  MTBF / (MTBF+MTTR)
+	​
+
+  ⚠️ Mẹo nhớ nhanh FE
+
+信頼性: “có hay không lỗi”
+
+可用性: “có dùng được không”
+
+
+ĐỐI VỚI HỆ THỐNG NỐI TIẾP VÀ THỆ THỐNG SONG SONG
+🔥 直列システムと並列システム（Hệ thống nối tiếp và song song）
+1️⃣ 直列システム（Hệ thống nối tiếp）
+👉 Tất cả thành phần phải hoạt động thì hệ thống mới hoạt động
+可用性= A1 × A2 × A3 × ... × An
+→ 可用性 giảm khi thêm thành phần
+2️⃣ 並列システム（Hệ thống song song）
+👉 Chỉ cần một thành phần hoạt động thì hệ thống vẫn hoạt động
+可用性= 1 - (1 - A1) × (1 - A2) × (1 - A3) × ... × (1 - An)
+→ 可用性 tăng khi thêm thành phần
+➡️ KẾT LUẬN QUAN TRỌNG CHO FE
+Hệ thống nối tiếp: thêm thành phần → 可用性 giảm
+Hệ thống song song: thêm thành phần → 可用性 tăng
+
+
+ĐỐI VỚI HỆ THỐNG ĐA KÊNH HÓA 
+🔥 多重化システム（Hệ thống đa kênh hóa）
+Hệ thống gồm nhiều thiết bị hoặc nhiều hệ thống con ghép nối tạo thành một hệ
+thống lớn
+👉 Mục đích: tăng độ tin cậy và hiệu năng
+Vd hệ thống 1 nối tiếp, hệ thống 2 song song
+-> tính từng hệ thống r nhân kết quả vs nhau
+
+===============================================================
+################################################################
+🔥🔥🔥🔥HỆ ĐIỀU HÀNH🔥🔥🔥🔥🔥🔥🔥🔥
+  Operating System (OS) – オペレーティングシステム
+🔥 OSの役割（Vai trò của OS）
+1️⃣ Quản lý job 
+Job là những việc mà người dùng giao cho máy tính xử lý
+ スプーリング (Spooling)： đưa dữ liệu vào một khu vực lưu trữ tạm thời trước khi đc xừ lý hoặc in ấn.
+👉 Không cần chờ máy in xử lý mà có thể tiếp tục công việc khác
+
+ バッファ(Buffer):là một khu vực bộ nhớ tạm thời dùng để lưu trữ dữ liệu đang chờ được xử lý hoặc truyền đi.
+👉 Giúp điều hòa tốc độ giữa các thiết bị
+
+2️⃣ Quản lý task マルチタスク ( đa nhiệm task )
+Task là những mệnh lệnh mà hệ điều hành giao cho CPU thực hiện
+singule task(シングルタスク): chỉ chạy 1 task tại 1 thời điểm
+multitask(マルチタスク): chạy nhiều task cùng lúc
+
+ 2 phương pháp quản lý task
+- ノンプリエンプティブ方式 (non-preemptive):KHÔNG CHIẾM QUYỀN... task chạy đến khi hoàn thành mới chuyển sang task khác
+- プリエンプティブ方式 (preemptive):CHIẾM QUYỀN... hệ điều hành có thể tạm dừng task hiện tại để chuyển sang task khác
+
+👉Quá trình 1 task từ lúc sinh ra tới khi hoàn tất
+新規作成 → 実行待ち → 実行中 → 待機中 → 終了
+
+        新規作成 (New)
+             ↓
+       実行待ち (Ready)
+             ↓   ← CPU割当
+        実行中 (Running)
+          ↓        ↓
+   I/O要求       時間切れ・高優先度割込み
+    (I/O)             (Preempt)
+      ↓                    ↓
+  待機中 (Waiting)    実行待ち (Ready)
+      ↓
+  I/O完了
+      ↓
+ 実行待ち (Ready)
+      ↓
+   実行中 (Running)
+      ↓
+   終了 (Exit)
+
+
+   🔥🔥LÊN LỊCH THỰC THI TASK🔥🔥
+
+  🧠 1. FCFS（先着順方式 – First Come First Serve）
+  👉 Task đến trước được xử lý trước
+  🧠 2. SJF（最短処理時間優先方式 – Shortest Job First）
+  👉 Task có thời gian xử lý ngắn nhất được ưu tiên
+  🧠 3.Priority Scheduling（優先度）
+  👉 Task có độ ưu tiên cao được xử lý trước ➡️ Task đang chạy bị dừng (preempt) bị đẩy về Ready
+  🧠 4. Round Robin（ラウンドロビン方式）
+  👉 Mỗi task được cấp một khoảng thời gian (time slice)➡️ Mỗi task chạy tối đa q ms rồi nhường CPU
+
+  🔥🔥QUẢN LÝ BỘ NHỚ ẢO 🔥🔥
+  🧠 1. ページング方式 (Paging):Phương thức phân chia bộ nhớ thực và bộ nhớ ảo thành các trang với chiều dài cố định
+  🧠 2. ページフォールト (Page Fault): cơ chế ngắt phát sinh Khi truy cập trang không có trong bộ nhớ chính.
+  🧠 3. ページアウト (Page Out): chuyển trang từ bộ nhớ chính sang bộ nhớ phụ
+
+ 🔥 3 thuật toán thay thế trang
+  🧠 1. FIFO (First In First Out): thay thế trang vào bộ nhớ lâu nhất
+  🧠 2. LRU (Least Recently Used): thay thế trang lâu không sử dụng nhất
+  🧠 3. LFU (Least Frequently Used): thay thế trang ít được sử dụng nhất
+
+  🔥  スラッシング (Thrashing): Hiện tượng máy tính luôn phải chuyển đổi từ bộ nhớ thực sang bộ nhớ ảo
+
+  ➡️ Giải pháp: tăng dung lượng bộ nhớ chính hoặc tối ưu hóa thuật toán thay thế trang.
+
+  QUẢN LÝ DỮ LIỆU
+🔥 ファイルシステム (File System)
+Chức năng quản lý dữ liệu mà máy tính cần cho việc xử lý
+1️⃣ ファイル管理 (Quản lý file)
+👉 Tạo, xóa, đổi tên, di chuyển file
+2️⃣ バックアップ (Sao lưu dữ liệu)
+👉 Sao chép dữ liệu để phòng mất mát
+3️⃣ アクセス制御 (Kiểm soát truy cập)
+👉 Phân quyền đọc/ghi/xóa file cho người dùng
+4️⃣ ディレクトリ管理 (Quản lý thư mục)
+👉 Tổ chức file trong thư mục, cây thư mục
