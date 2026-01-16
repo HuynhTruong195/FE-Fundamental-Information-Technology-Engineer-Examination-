@@ -1222,3 +1222,285 @@ Chức năng quản lý dữ liệu mà máy tính cần cho việc xử lý
 👉 Phân quyền đọc/ghi/xóa file cho người dùng
 4️⃣ ディレクトリ管理 (Quản lý thư mục)
 👉 Tổ chức file trong thư mục, cây thư mục
+
+===============================================================
+################################################################
+🔥🔥🔥BACKUP🔥🔥🔥🔥🔥🔥🔥🔥
+	1️⃣ フルバックアップ (Full Backup – Sao lưu toàn bộ)
+
+📌 Là gì?
+→ Sao lưu toàn bộ dữ liệu mỗi lần backup.
+
+📌 Đặc điểm
+
+Dữ liệu đầy đủ nhất
+Dễ khôi phục
+Tốn dung lượng & thời gian
+
+📌 Ví dụ
+Hôm nay backup → copy tất cả file A, B, C
+👉 Nhớ nhanh: Full = copy hết
+
+2️⃣ 差分バックアップ (Differential Backup – Sao lưu khác biệt)
+
+📌 Là gì?
+→ Chỉ sao lưu những thay đổi kể từ lần Full Backup gần nhất.
+
+📌 Đặc điểm
+Dung lượng tăng dần theo thời gian
+Khôi phục cần:
+1 Full + 1 Differential
+
+📌 Ví dụ
+
+Thứ 2: Full (A, B, C)
+Thứ 3: đổi B → backup B
+Thứ 4: đổi C → backup B + C
+👉 Nhớ nhanh: Differential = so với Full
+
+3️⃣ 増分バックアップ (Incremental Backup – Sao lưu tăng dần)
+
+📌 Là gì?
+→ Chỉ sao lưu những thay đổi so với lần backup gần nhất (bất kỳ loại nào).
+
+📌 Đặc điểm
+Nhẹ & nhanh nhất
+Khôi phục cần:
+1 Full + tất cả Incremental
+
+📌 Ví dụ
+
+Thứ 2: Full (A, B, C)
+Thứ 3: đổi B → backup B
+Thứ 4: đổi C → backup C
+
+👉 Nhớ nhanh: Incremental = so với lần trước
+
+===============================================================
+################################################################
+🔥🔥🔥CÁC CÔNG CỤ PHÁT TRIỂN🔥🔥🔥🔥🔥🔥🔥🔥	
+	
+🔥🔥ソースコード (Source Code)
+
+📌 Là gì?
+→ Code do con người viết, dễ đọc.
+
+📌 Ví dụ
+
+C, Java, JavaScript code
+
+👉 Nhớ nhanh: Con người viết
+
+🔥🔥オブジェクトコード (Object Code)
+
+📌 Là gì?
+→ Code đã được compiler dịch, máy tính hiểu.
+
+📌 Đặc điểm
+
+Dạng nhị phân
+
+Con người khó đọc
+
+👉 Nhớ nhanh: Máy tính hiểu
+
+🔁 Quan hệ
+
+ソースコード → (コンパイル) → オブジェクトコード
+
+
+🔄 Trình tự compiler thực hiện
+	（1）字句解析（Lexical Analysis）
+
+📌 Làm gì?
+→ Chia source code thành các phần nhỏ (token) và kiểm tra lỗi cơ bản.
+
+👉 Nhớ nhanh: Cắt nhỏ – soi lỗi chữ
+
+（2）構文解析（Syntax Analysis）
+
+📌 Làm gì?
+→ Kiểm tra cấu trúc / ngữ pháp của chương trình có đúng không.
+
+👉 Nhớ nhanh: Đúng ngữ pháp chưa?
+
+（3）意味解析（Semantic Analysis）
+
+📌 Làm gì?
+→ Kiểm tra ý nghĩa & logic có mâu thuẫn không
+(ví dụ: dùng biến chưa khai báo, kiểu dữ liệu sai).
+
+👉 Nhớ nhanh: Có hợp lý không?
+
+（4）最適化（Optimization）
+
+📌 Làm gì?
+→ Cải thiện thứ tự tính toán, giảm tài nguyên, tăng tốc độ.
+
+👉 Nhớ nhanh: Làm cho nhanh – gọn
+
+（5）コード生成（Code Generation）
+
+📌 Làm gì?
+→ Tạo オブジェクトコード (mã máy).
+
+👉 Nhớ nhanh: Tạo code cho máy
+
+🧠 Cách nhớ 1 dòng (rất hay dùng khi thi FE)
+
+Cắt → Kiểm → Hiểu → Tối ưu → Sinh mã
+
+Hoặc theo tiếng Nhật:
+
+字句 → 構文 → 意味 → 最適化 → コード生成
+==========================================
+🔥🔥リンカ（Linker）
+
+📌 Là gì?
+→ Nối nhiều object code lại thành 1 chương trình.
+
+📌 Làm gì?
+Ghép các file object
+Giải quyết tham chiếu hàm/biến
+👉 Nhớ nhanh: Link = nối
+
+🔥🔥ロードモジュール（Load Module）
+
+📌 Là gì?
+→ Chương trình đã sẵn sàng để nạp vào bộ nhớ và chạy.
+
+📌 Đặc điểm
+Được tạo sau khi linker
+Hệ điều hành dùng để load
+👉 Nhớ nhanh: Load = nạp chạy
+
+🔄 Luồng tổng quát (rất hay ra đề)
+
+ソースコード
+→ コンパイル
+→ オブジェクトコード
+→ リンカ
+→ ロードモジュール
+→ 実行
+
+🧠 Mẹo nhớ thi FE
+Compiler: dịch
+Linker: nối
+Loader: nạp
+Run: Chạy
+==========================================
+	🔥🔥静的テスト và 動的テスト🔥🔥
+	
+	静的テスト（Static Test）
+📌 Là gì?
+→ Không chạy chương trình, chỉ xem / phân tích.
+
+📌 Ví dụ
+Review source code
+Check thiết kế
+Static analysis tool
+👉 Nhớ nhanh: Không chạy
+
+動的テスト（Dynamic Test）
+
+📌 Là gì?
+→ Chạy chương trình thật để kiểm tra.
+
+📌 Ví dụ
+Unit test
+Integration test
+System test
+
+👉 Nhớ nhanh: Có chạy
+
+	==========================================
+	==========================================
+	テストツールの種類（Phân loại test tool）
+	
+1️⃣静的テストツール（Static Test Tool）
+👉 Không chạy chương trình, chỉ phân tích source code.
+🔹 ソースコード解析ツール
+
+📌 Làm gì?
+→ Phân tích source code để phát hiện lỗi.
+
+📌 Ví dụ lỗi
+Viết sai quy tắc
+Biến không dùng
+Lỗi tiềm ẩn
+👉 Nhớ: Soi lỗi trong code
+
+🔹 プログラム構造解析ツール
+
+📌 Làm gì?
+→ Phân tích cấu trúc chương trình.
+
+📌 Dùng để
+Hiểu luồng xử lý
+Gợi ý cải tiến code
+👉 Nhớ: Xem cấu trúc
+
+🔹 モジュールインタフェースチェックツール
+
+📌 Làm gì?
+→ Kiểm tra sự phù hợp giao diện giữa các module.
+
+📌 Ví dụ
+Kiểu tham số có khớp không
+Số lượng tham số đúng chưa
+👉 Nhớ: Check kết nối module
+
+2️⃣ 動的テストツール（Dynamic Test Tool）
+
+👉 Có chạy chương trình thật để test.
+
+🔹 インスペクタ
+
+📌 Làm gì?
+→ Chạy chương trình và phát hiện lỗi khi chạy.
+
+📌 Ví dụ
+Lỗi runtime
+Giá trị biến bất thường
+
+👉 Nhớ: Chạy để bắt lỗi
+
+🔹 テストカバレージツール
+
+📌 Làm gì?
+→ Kiểm tra mức độ chương trình đã được test.
+
+📌 Biết được
+Dòng nào đã chạy
+Nhánh nào chưa test
+👉 Nhớ: Test đã phủ được bao nhiêu %
+
+3️⃣テスト実施支援ツール（Test Support Tool）
+
+👉 Hỗ trợ việc test, không trực tiếp tìm lỗi logic.
+
+🔹 テストベッドツール
+
+📌 Làm gì?
+→ Tạo môi trường test tự động.
+
+📌 Ví dụ
+Tạo stub / driver
+Giảm công làm tay
+👉 Nhớ: Chuẩn bị môi trường test
+
+🔹 テストデータ生成ツール
+
+📌 Làm gì?
+→ Tự động tạo dữ liệu test.
+
+📌 Ví dụ
+Dữ liệu lớn
+Dữ liệu đặc biệt
+👉 Nhớ: Sinh data test
+
+🧠 Tổng hợp nhớ nhanh (rất hay ra FE)
+
+静的 → không chạy → phân tích code
+
+動的 → chạy thật → kiểm tra hành vi
