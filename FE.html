@@ -1454,7 +1454,7 @@ Số lượng tham số đúng chưa
 
 👉 Có chạy chương trình thật để test.
 
-🔹 インスペクタ
+🔹 インスペクタ (Inspector)
 
 📌 Làm gì?
 → Chạy chương trình và phát hiện lỗi khi chạy.
@@ -1465,7 +1465,7 @@ Giá trị biến bất thường
 
 👉 Nhớ: Chạy để bắt lỗi
 
-🔹 テストカバレージツール
+🔹 テストカバレージツール (Test coverage)
 
 📌 Làm gì?
 → Kiểm tra mức độ chương trình đã được test.
@@ -1596,3 +1596,134 @@ Ký hiệu © nhưng quay ngược
 👉 Ý nghĩa
 
 Phần mềm theo copyleft
+
+==========================================
+==========================================
+🧠 Bộ nhớ bán dẫn là gì?
+
+Bộ nhớ bán dẫn (半導体メモリ) là bộ nhớ:
+bán dẫn là vật liệu nằm giữa chất dẫn điện và chất cách điện, thường là silicon.
+Làm bằng chip điện tử
+Truy cập rất nhanh
+Dùng để lưu chương trình & dữ liệu khi máy chạy
+
+📌 Ví dụ: RAM, ROM, Cache
+
+🔥 Các loại bộ nhớ bán dẫn (hay ra FE)
+1️⃣ RAM（主記憶装置 – Main Memory, Random Access Memory）CHỈ HOẠT ĐỘNG KHI CÓ ĐIỆN
+
+👉 Bộ nhớ chính, CPU dùng trực tiếp
+
+❌ Mất dữ liệu khi tắt máy (揮発性)
+✔️ Rất nhanh
+Các loại RAM:
+  Loại	Ý nghĩa
+  DRAM	Chậm hơn, dung lượng lớn
+  SRAM	Rất nhanh, dùng làm Cache
+
+2️⃣ ROM（Read Only Memory）CÓ THỂ LƯU DỮ LIỆU KHI TẮT MÁY
+
+👉 Chỉ đọc, lưu chương trình khởi động
+✔️ Không mất dữ liệu khi tắt máy
+📌 Ví dụ: BIOS
+
+3️⃣ Cache Memory（キャッシュメモリ）
+👉 Nằm giữa CPU và RAM
+✔️ Cực nhanh
+❌ Dung lượng nhỏ
+Là SRAM
+📌 Giúp CPU đỡ phải đọc RAM nhiều
+
+🧠 Thứ tự tốc độ (FE hay hỏi)
+Cache > RAM > SSD > HDD
+
+FLASH MEMORY (フラッシュメモリ)
+👉 Bộ nhớ bán dẫn không bay hơi
+✔️ Lưu dữ liệu khi tắt máy
+✔️ Tốc độ nhanh hơn HDD/SSD
+📌 Ví dụ: USB, thẻ nhớ, SSD
+
+
+===============================================================
+################################################################
+🔥🔥🔥🔥MẠCH ĐIỆN ĐIỆN TỬ🔥🔥🔥🔥🔥🔥🔥🔥
+   
+  🧠 1. Memory Cell
+👉 Là đơn vị nhỏ nhất lưu trữ dữ liệu trong bộ nhớ, chưa thông tin 0 hoặc 1, hay có thể nói bộ nhớ bán dẫn có vô số những memory cell
+  🧠 2. Tụ điện (コンデンサ)
+👉 Là thành phần lưu trữ điện tích, dùng để lưu trữ dữ liệu trong DRAM
+  🧠3.Mạch Flip-Flop (フリップフロップ回路)
+👉 Là mạch điện tử dùng để lưu trữ 1 bit dữ liệu, dùng lưu trạng thái dữ liệu ở cả quá khứ và hiện tại
+  🧠(チャタリング)- Nhiễu
+👉 Hiện tượng tiếp xúc không ổn định
+  🧠(7セグメント表示器)
+👉 Mạch hiển thị số thập phân 7 đoạn
+
+
+🔥🔥🔥🔥Thiết kế giao diện người dùng🔥🔥🔥🔥🔥🔥🔥🔥
+1️⃣ユーザビリティ（Usability – Khả năng sử dụng）
+👉 Mức độ dễ dàng và hiệu quả mà người dùng có thể sử dụng giao diện.
+ ユーザビリティの評価方法
+方法	                      Nghĩa
+インタビュー法	        Phỏng vấn người dùng
+ヒューリスティック評価  Dựa theo đánh giá của các chuyên gia
+ユーザビリティテスト   Quan sát người dùng thực hiện nhiệm vụ
+ログデータ分析法      Phân tích dữ liệu sử dụng thực tế, ghi log lại hành vi người dùng
+
+2️⃣入カチェック（Input Check – Kiểm tra đầu vào）
+👉 Kiểm tra dữ liệu người dùng nhập vào để đảm bảo tính hợp lệ và an toàn
+  ユーザビリティの評価方法
+  論理チェック: Kiểm tra logic (ví dụ: ngày tháng hợp lệ)
+  重複チェック: Kiểm tra trùng lặp (ví dụ: tên đăng nhập đã tồn tại)
+  フォーマットチェック: Kiểm tra định dạng (ví dụ: email đúng định dạng)
+  シーケンスチェック: Kiểm tra thứ tự (ví dụ: mã sản phẩm theo thứ tự tăng dần)
+  範囲チェック: Kiểm tra phạm vi (ví dụ: tuổi từ 18 đến 65)
+
+3️⃣ユーザビリティを向上させるその他の機能 （Các chức năng khác cải thiện khả năng sử dụng）
+Undo機能: Cho phép người dùng hoàn tác thao tác gần nhất
+マクロ機能: Tự động hóa chuỗi thao tác lặp đi lặp lại
+ショートカットキー: Phím tắt giúp truy cập nhanh chức năng
+
+ 4.ユニバーサルデザイン（Universal Design – Thiết kế phổ quát）
+👉 Thiết kế giao diện phù hợp với mọi người dùng, bao gồm cả người khuyết tật
+
+5.バリアフリーデザイン: Thiết kế không rào cản (ví dụ: hỗ trợ người khiếm thị)
+
+6.Webアクセシビリティ: Truy cập web dễ dàng cho mọi người
+
+===============================================================
+################################################################
+🔥🔥🔥🔥CÔNG NGHỆ ĐA PHƯƠNG TIỆN🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. 文字 (text)
+  文字の表し方 (Biểu diễn ký tự)
+ビットマップフォント: Dùng lưới điểm ảnh để biểu diễn ký tự
+アウトラインフォント: Dùng các đường cong và hình học để biểu diễn ký tự
+
+アウトラインフォント khi hiển thị ra màn hình cũng sẽ phải biên ra bitmap font để hiển thị được
+
+  🧠 2. 画像 (image)
+  画像の表し方 (Biểu diễn hình ảnh)
+ビットマップ画像: Dùng lưới điểm ảnh để biểu diễn hình ảnh
+
+  🧠 3. 音声 (audio)
+  音声の表し方 (Biểu diễn âm thanh)
+  PCMによるデータ変換: Chuyển đổi dữ liệu âm thanh thành dạng số bằng phương pháp PCM (Pulse Code Modulation)
+  標本化: Lấy mẫu tín hiệu âm thanh liên tục thành các mẫu rời rạc
+  量子化: Chuyển đổi các mẫu rời rạc thành các giá trị số
+  符号化: Mã hóa các giá trị số thành dạng nhị phân 
+
+  🧠 4.  静止画 (ảnh tĩnh)
+  静止画の表し方 (Biểu diễn ảnh tĩnh)
+ビットマップ画像: Dùng lưới điểm ảnh để biểu diễn hình ảnh
+
+アンチエイリアシング: Kỹ thuật làm mịn cạnh răng cưa trong hình ảnh số
+
+  🧠 5. 動画 (video)
+  動画の表し方 (Biểu diễn video)
+フレーム: Một hình ảnh tĩnh trong chuỗi hình ảnh tạo thành video
+フレームレート: Số lượng khung hình hiển thị trên giây trong
+
+H.264/MPEG-4 AVC: Chuẩn nén video phổ biến
+
+
+  🧠 6. テクスチャマッピング (Texture Mapping, bản đồ bề mặt)
