@@ -1681,13 +1681,13 @@ FLASH MEMORY (フラッシュメモリ)
 
 3️⃣ユーザビリティを向上させるその他の機能 （Các chức năng khác cải thiện khả năng sử dụng）
 Undo機能: Cho phép người dùng hoàn tác thao tác gần nhất
-マクロ機能(macro): Tự động hóa chuỗi thao tác lặp đi lặp lại
+マクロ機能: Tự động hóa chuỗi thao tác lặp đi lặp lại
 ショートカットキー: Phím tắt giúp truy cập nhanh chức năng
 
  4.ユニバーサルデザイン（Universal Design – Thiết kế phổ quát）
 👉 Thiết kế giao diện phù hợp với mọi người dùng, bao gồm cả người khuyết tật
 
-5.バリアフリーデザイン(Barrier-Free Design）: Thiết kế không rào cản (ví dụ: hỗ trợ người khiếm thị)
+5.バリアフリーデザイン: Thiết kế không rào cản (ví dụ: hỗ trợ người khiếm thị)
 
 6.Webアクセシビリティ: Truy cập web dễ dàng cho mọi người
 
@@ -1704,7 +1704,7 @@ Undo機能: Cho phép người dùng hoàn tác thao tác gần nhất
   🧠 2. 画像 (image)
   画像の表し方 (Biểu diễn hình ảnh)
 ビットマップ画像: Dùng lưới điểm ảnh để biểu diễn hình ảnh
-アンチエイリアシング: Kỹ thuật làm mịn cạnh răng cưa trong hình ảnh số
+
   🧠 3. 音声 (audio)
   音声の表し方 (Biểu diễn âm thanh)
   PCMによるデータ変換: Chuyển đổi dữ liệu âm thanh thành dạng số bằng phương pháp PCM (Pulse Code Modulation)
@@ -1712,20 +1712,181 @@ Undo機能: Cho phép người dùng hoàn tác thao tác gần nhất
   量子化: Chuyển đổi các mẫu rời rạc thành các giá trị số
   符号化: Mã hóa các giá trị số thành dạng nhị phân 
 
-  🧠 4. 動画 (video)
+  🧠 4.  静止画 (ảnh tĩnh)
+  静止画の表し方 (Biểu diễn ảnh tĩnh)
+ビットマップ画像: Dùng lưới điểm ảnh để biểu diễn hình ảnh
+
+アンチエイリアシング: Kỹ thuật làm mịn cạnh răng cưa trong hình ảnh số
+
+  🧠 5. 動画 (video)
   動画の表し方 (Biểu diễn video)
-フレームFrame (khung hình): Một hình ảnh tĩnh trong chuỗi hình ảnh tạo thành video
-フレームレートFrame rate (tốc độ khung hình): Là số lượng khung hình hiển thị trong 1 giây.
-	
-✅ H.264 / MPEG-4 AVC
-Là chuẩn nén video phổ biến.
-Giúp giảm dung lượng video mà vẫn giữ được chất lượng hình ảnh tốt.
-Được dùng rộng rãi trong YouTube, điện thoại, camera..
+フレーム: Một hình ảnh tĩnh trong chuỗi hình ảnh tạo thành video
+フレームレート: Số lượng khung hình hiển thị trên giây trong
+
+H.264/MPEG-4 AVC: Chuẩn nén video phổ biến
 
 
-  🧠 5. テクスチャマッピング (Texture Mapping, bản đồ bề mặt)
-Đây là kỹ thuật dán hình ảnh (gọi là texture) lên bề mặt của mô hình 3D để tạo cảm giác chân thực.
-🌰 Ví dụ dễ hiểu:
-Bạn có mô hình 3D hình quả bóng.
-Nếu chỉ để trơn thì nhìn sẽ rất đơn giản.
-Nhưng nếu bạn dán hình ảnh vân gỗ lên bề mặt quả bóng, nó sẽ trông như một quả bóng gỗ thật sự!
+  🧠 6. テクスチャマッピング (Texture Mapping, bản đồ bề mặt)
+
+
+  ==============================================
+################################################################
+🔥🔥🔥🔥QUẢN LÝ TRANSACTION🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. トランザクション（Transaction） 
+👉 Là một đơn vị công việc hoàn chỉnh trong hệ thống cơ sở dữ liệu.
+  🧠 2. ACID特性（Tính chất ACID）
+👉 Đảm bảo tính toàn vẹn và nhất quán của dữ liệu trong các giao dịch cơ sở dữ liệu.
+  特性	      Nghĩa
+  Atomicity(原子性)	Nguyên tử: Giao dịch được thực hiện hoàn toàn hoặc không thực hiện gì cả.
+  Consistency(一貫性 )	Tính nhất quán: Giao dịch đưa hệ thống từ trạng thái nhất quán này sang trạng thái nhất quán khác.
+  Isolation(独立性)	Tính cô lập: Các giao dịch diễn ra độc lập với nhau, không ảnh hưởng lẫn nhau.
+  Durability(耐久性)	Tính bền vững: Khi giao dịch đã hoàn thành, dữ liệu sẽ được lưu trữ vĩnh viễn, ngay cả khi có sự cố hệ thống.
+
+🧠障害 là gì?
+Mất điện
+Server crash
+Lỗi phần cứng
+OS / DB bị treo
+➡ Sau khi có 障害, hệ thống phải phục hồi lại dữ liệu chính xác
+📌 Trong FE:
+障害回復 = backup + log
+
+  🧠 3. Backup
+ バックアップファイル: Tệp sao lưu dữ liệu để phục hồi khi có sự cố. 
+ ログファイル: file log ghi lại các hoạt động và thay đổi trong hệ thống cơ sở dữ liệu.
+  🧠 4. ロールバック (Rollback)
+👉 Quá trình hoàn tác các thay đổi trong giao dịch chưa được xác nhận.
+
+🔥🔥🔥🔥🔥🔥DBMS🔥🔥🔥🔥🔥🔥
+1️⃣ DBMS là gì?（DBMSとは）
+👉 Định nghĩa chuẩn FE
+
+DBMS (Database Management System)
+= Phần mềm quản lý cơ sở dữ liệu
+
+📌 Nói ngắn gọn để đi thi:
+DBMS là phần mềm trung gian giữa người dùng / ứng dụng và dữ liệu
+
+2️⃣ DBMS làm những việc gì? (rất hay ra đề)
+🔹 1. Quản lý dữ liệu
+
+Thêm / sửa / xóa / tìm kiếm
+
+Lưu dữ liệu xuống disk
+
+🔹 2. Quản lý transaction（トランザクション管理）
+
+👉 Cái này liên quan trực tiếp ACID
+DBMS đảm bảo:
+Atomicity
+Consistency
+Isolation
+Durability
+
+📌 FE cực hay hỏi:
+「ACID特性を保証するのは誰か？」
+✔ DBMS
+
+🔹 3. Quản lý đồng thời（同時実行制御）
+Nhiều user truy cập cùng lúc
+Tránh dữ liệu bị hỏng
+➡ Liên quan Isolation
+
+🔹 4. Quản lý khôi phục sự cố（障害回復）
+Backup
+Log file
+Redo / Undo
+➡ DBMS tự động làm, không phải ứng dụng tự viết
+
+🔹 5. Quản lý bảo mật（セキュリティ）
+Quyền truy cập (READ / WRITE)
+User, password
+
+3️⃣ DBMS ≠ Database (câu rất hay bẫy)
+Khái niệm	Là gì
+Database	Dữ liệu
+DBMS	Phần mềm quản lý dữ liệu
+
+📌 Ví dụ:
+Database = bảng, record
+DBMS = MySQL, Oracle, PostgreSQL
+
+
+
+  DBMSの役割（Vai trò của DBMS）
+Chức năng chính của DBMS
+1. Quản lý dữ liệu
+2. Cung cấp ngôn ngữ truy vấn
+3. Đảm bảo tính toàn vẹn dữ liệu
+4. Quản lý người dùng và bảo mật
+5. Hỗ trợ sao lưu và phục hồi dữ liệu
+
+
+===============================================================
+################################################################
+🔥🔥🔥🔥排他制御- 🔥🔥🔥🔥🔥🔥🔥🔥
+1️⃣ 排他制御（はい他せいぎょ） KIẾM SOÁT ĐỘC QUYỀN – Concurrency control
+
+👉 DBMS kiểm soát truy cập đồng thời để tránh dữ liệu sai
+
+Nhiều transaction cùng truy cập dữ liệu
+DBMS dùng ロック (lock) để kiểm soát
+
+📌 Mục tiêu:
+Giữ Isolation (独立性) trong ACID
+
+2️⃣ 専有ロック & 共有ロック
+🔒 専有ロック（Exclusive Lock, X）
+
+Ghi (UPDATE / DELETE)
+Người khác không đọc, không ghi
+👉 “Tôi dùng một mình”
+
+🔓 共有ロック（Shared Lock, S）
+Chỉ đọc (SELECT)
+Nhiều người đọc cùng lúc được
+👉 “Cùng xem nhưng không sửa”
+
+3️⃣ ロックの両立性（Compatibility）⭐ hay ra
+共有ロック (S)	専有ロック (X)
+共有ロック (S)	✅ OK	❌ NG
+専有ロック (X)	❌ NG	❌ NG
+
+📌 Nhớ 1 câu:
+Chỉ S–S là cùng tồn tại
+
+4️⃣ ロックの粒度（Granularity）
+
+👉 Độ lớn của đơn vị bị khóa
+Các mức thường gặp:
+Database
+Table
+Row (record)
+
+So sánh nhanh (thi FE rất thích)
+粒度        	Ưu điểm            	Nhược điểm
+Lớn (Table)	Quản lý đơn giản    	Ít song song
+Nhỏ (Row)	  Song song cao       	Quản lý phức tạp
+
+📌 Câu chốt:
+
+粒度 nhỏ → hiệu năng song song cao
+
+5️⃣ Mẹo làm bài FE ⚡
+
+Thấy 同時実行 / 排他制御 → nghĩ lock
+
+Thấy 読取のみ → 共有ロック
+
+Thấy 更新 / 書込み → 専有ロック
+
+Thấy 両立性 → nhớ bảng S–S OK
+
+Thấy 性能 / 並行性 → nghĩ 粒度
+
+6️⃣ Gói nhớ nhanh 1 dòng
+
+排他制御 = Lock, S đọc chung được, X dùng một mình, S–S OK, 粒度 nhỏ thì song song cao
+
+
+
