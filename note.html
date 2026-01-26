@@ -2064,3 +2064,80 @@ Subnet mask: 255.255.255.0
     📌 Chỗ mask = 0 → Host
   → Network = 192.168.1
   → Host = .10
+
+  ĐỊA CHỈ MẠNG LÀ ĐỊA CHỈ IP CÓ TẤT CẢ CÁC BIT CỦA PHẦN HOST LÀ '0'
+  ĐỊA CHỈ QUẢNG BÁ LÀ ĐỊA CHỈ IP CÓ TẤT CẢ CÁC BIT CỦA PHÀN HOST LÀ '1' 
+
+===============================================================
+################################################################
+🔥🔥🔥🔥IT công khai và IP riêng tư🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. IP công khai (パブリックIPアドレス)
+👉 Địa chỉ IP có thể truy cập từ Internet, được cấp phát bởi tổ chức quản lý địa chỉ IP toàn cầu (IANA) hoặc các nhà cung cấp dịch vụ Internet (ISP).
+  🧠 2. IP riêng tư (プライベートIPアドレス)
+👉 Địa chỉ IP được sử dụng trong mạng nội bộ (LAN), không thể truy cập trực tiếp từ Internet.
+  🧠3. IPv6
+👉 Phiên bản địa chỉ IP mới với không gian địa chỉ rộng lớn hơn so với IPv4.
+  🧠 4. NAT (Network Address Translation) vd 3 cái nhà 3 địa chỉ nhưng quản lý chỉ biết nhà đó là 1
+👉 Kỹ thuật chuyển đổi 1 IP riêng thành IP toàn cầu 
+  🧠 5. NAPT (Network Address Port Translation)
+👉 Kỹ thuật chuyển đổi nhiều thiết bị có IP riêng kết nối internet bằng một IP toàn cầu duy nhất.
+  🧠6. DHCP (Dynamic Host Configuration Protocol)
+👉 Giao thức cấp phát địa chỉ IP tự động cho thiết bị trong mạng.
+
+===============================================================
+################################################################
+🔥🔥🔥🔥DNS🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. DNS (Domain Name System)
+👉 Giao thức chuyển đổi tên miền (ví dụ: google.com) thành địa chỉ IP (ví dụ: 142.250.191.14) để máy tính có thể truy cập vào website và ngược lại.
+  🧠 2. ドメイン名 (Domain Name)
+👉 Tên miền là địa chỉ dễ nhớ dùng để truy cập các trang web trên Internet, thay vì phải nhớ địa chỉ IP số.
+  🧠 3. URL 
+👉 URL (Uniform Resource Locator) là địa chỉ đầy đủ của một tài nguyên trên Internet. VD: https://portal.rikkei.edu.vn/abc.html
+  🧠 4. ホスト名 (Hostname)
+👉 Tên máy chủ là tên định danh của một thiết bị trong mạng, thường được sử dụng để truy cập thiết bị đó.
+
+===============================================================
+################################################################
+🔥🔥🔥🔥OSI基本参照モデルとTCP／IP PHƯƠNG THỨC TRUYỀN TÍN HIỆU🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. OSI基本参照モデル (Mô hình tham chiếu OSI)
+👉 Mô hình OSI (Open Systems Interconnection) là một khung lý thuyết chia quá trình truyền dữ liệu trong mạng thành 7 lớp riêng biệt, giúp hiểu và thiết kế hệ thống mạng.
+  🧠 2. TCP/IPモデル (Mô hình TCP/IP)
+👉 Mô hình TCP/IP là một khung lý thuyết chia quá trình truyền dữ liệu trong mạng thành 4 lớp chính, được sử dụng rộng rãi trong các mạng máy tính hiện đại, bao gồm cả Internet.
+  🧠 3. プロトコル (Protocol)
+👉 Giao thức là tập hợp các quy tắc và chuẩn mực được sử dụng để truyền dữ liệu giữa các thiết bị trong mạng máy tính.
+
+🧠 OSI & TCP/IP – TÓM TẮT ĂN ĐIỂM FE
+🔹 OSI = 7 tầng (mô hình lý thuyết)
+  Tầng	Nhớ gì
+  L7	Ứng dụng (HTTP)
+  L6	Mã hóa / nén
+  L5	Quản lý phiên
+  L4	TCP / UDP
+  L3	IP, Router
+  L2	MAC, Switch
+  L1	Tín hiệu điện
+
+  🔹 TCP/IP = 4 tầng (thực tế)
+  Tầng	Giao thức
+  L7	  HTTP
+  L4	  TCP / UDP
+  L3	  IP  
+  L2	  MAC
+
+  🧠 Chốt 1 câu
+OSI là mô hình 7 tầng để học, TCP/IP là mô hình 4 tầng dùng thực tế.
+
+🔥🔥🔥🔥4つのネットワーク機器(4 THIẾT BỊ MẠNG)🔥🔥🔥🔥🔥
+
+  🧠 1. リピータ (Repeater) layer 1
+👉 Thiết bị khuếch đại tín hiệu mạng để mở rộng phạm vi truyền tín hiệu trong mạng LAN.
+  🧠 2. ブリッジ (Bridge) layer 2
+👉 Thiết bị kết nối truyền dữ liệu giữa hai mạng LAN với nhau và lọc lưu lượng dựa trên địa chỉ MAC.
+  🧠 3. ルーター (Router) Layer 3
+👉 Thiết bị định tuyến, chuyển tiếp gói tin giữa các mạng khác nhau dựa trên địa chỉ IP.
+  🧠 4. ゲートウェイ(Gateway) Layer 4-7
+👉 Thiết bị chuyển đổi giao thức giữa hai mạng khác nhau, cho phép giao tiếp giữa các hệ thống không tương thích.
+
+🔥🔥🔥NTP (Network Time Protocol)🔥🔥🔥
+  🧠 NTPとは
+👉 Giao thức đồng bộ thời gian mạng, cho phép các thiết bị trong mạng đồng bộ hóa thời gian với máy chủ thời gian chính xác .
