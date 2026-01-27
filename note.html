@@ -2129,15 +2129,72 @@ OSI là mô hình 7 tầng để học, TCP/IP là mô hình 4 tầng dùng th�
 
 🔥🔥🔥🔥4つのネットワーク機器(4 THIẾT BỊ MẠNG)🔥🔥🔥🔥🔥
 
-  🧠 1. リピータ (Repeater) layer 1
+  🧠 1. リピータ (Repeater) layer 1 , hoạt đồng tầng vật lý
 👉 Thiết bị khuếch đại tín hiệu mạng để mở rộng phạm vi truyền tín hiệu trong mạng LAN.
-  🧠 2. ブリッジ (Bridge) layer 2
-👉 Thiết bị kết nối truyền dữ liệu giữa hai mạng LAN với nhau và lọc lưu lượng dựa trên địa chỉ MAC.
-  🧠 3. ルーター (Router) Layer 3
-👉 Thiết bị định tuyến, chuyển tiếp gói tin giữa các mạng khác nhau dựa trên địa chỉ IP.
+  🧠 2. ブリッジ (Bridge) layer 2 , liên kết dữ liệu
+👉 Thiết bị kết nối truyền dữ liệu giữa hai mạng LAN với nhau, chỉ chuyển khi cần.
+  🧠 3. ルーター (Router) Layer 3 , hoặt động tầng mạng
+👉 Thiết bị định tuyến, chuyển tiếp dữ liệu giữa các mạng khác nhau dựa trên địa chỉ IP.
   🧠 4. ゲートウェイ(Gateway) Layer 4-7
 👉 Thiết bị chuyển đổi giao thức giữa hai mạng khác nhau, cho phép giao tiếp giữa các hệ thống không tương thích.
 
 🔥🔥🔥NTP (Network Time Protocol)🔥🔥🔥
   🧠 NTPとは
 👉 Giao thức đồng bộ thời gian mạng, cho phép các thiết bị trong mạng đồng bộ hóa thời gian với máy chủ thời gian chính xác .
+
+===============================================================
+################################################################
+🔥🔥🔥🔥CÁC MỐI NGUY CƠ BẢO MẬT THÔNG TIN🔥🔥🔥🔥🔥🔥
+  🧠 1. 人的脅威 (Con người)
+👉 Mối đe dọa từ con người, bao gồm cả nhân viên nội bộ và hacker bên ngoài.
+👉 ソーシャルエンジニアリング (Kỹ thuật Social Engineering): Khai thác tâm lý con người để đánh cắp thông tin.
+不正のトライアングル(Tam giác gian lận): Cơ hội, Động cơ, Biện minh hợp lý.
+  🧠 2. 技術的脅威 (Kỹ thuật)
+👉 Mối đe dọa từ các lỗi kỹ thuật, phần mềm lỗi thời, hoặc các lỗ hổng bảo mật trong hệ thống.
++ ポートスキャン (Port Scanning): Quét các cổng mạng để tìm lỗ hổng.
++ マルウェア (Malware): Phần mềm độc hại như virus, worm
++ セキュリティホール (Lỗ hổng bảo mật): Lỗi trong phần mềm hoặc hệ thống.
++ ブルートフォース攻撃 (Brute Force Attack): Tấn công bằng cách thử tất cả các kết hợp mật khẩu.
++ 辞書攻撃 (Dictionary Attack): Tấn công bằng cách sử dụng từ điển mật khẩu phổ biến.
++ パスワードリスト攻撃: Tấn công bằng cách sử dụng danh sách mật khẩu đã bị rò rỉ.
++ マルウェア (Malware): Phần mềm độc hại như virus, worm, trojan.
++ ボットネット (Botnet): Mạng lưới các thiết bị bị nhiễm malware điều khiển từ xa.
++ スパイウェア (Spyware): Phần mềm gián điệp thu thập thông tin người dùng.
++ ランサムウェア (Ransomware): Phần mềm tống tiền mã hóa dữ liệu người dùng.
++ キーロガー (Keylogger): Phần mềm ghi lại các phím bấm của người dùng.
++ バックドアの悪用 (Backdoor Exploitation): Lợi dụng cửa hậu trong phần mềm để truy cập trái phép.
++ フィッシング (Phishing): Lừa đảo người dùng cung cấp thông tin nhạy cảm qua các trang giả mạo.
++ ドライブバイダウンロード (Drive-by Download): Tải phần mềm độc hại khi truy cập trang web bị nhiễm.
++ SEOポイズニング (SEO Poisoning): Tấn công bằng cách tạo các trang web giả mạo xuất hiện cao trong kết quả tìm kiếm.
++ DNSキャッシュポイズニング (DNS Cache Poisoning): Tấn công làm giả mạo bản ghi DNS để chuyển hướng người dùng đến trang web giả mạo.
++ SQLインジェクション (SQL Injection): Tấn công bằng cách chèn mã SQL độc hại vào truy vấn cơ sở dữ liệu.
++ クロスサイトスクリプティング (XSS): Tấn công bằng cách chèn mã JavaScript độc hại vào trang web.
++ スパム (Spam): Gửi thư rác hoặc tin nhắn không mong muốn.
++ DoS攻撃 (Denial of Service Attack): Tấn công làm gián đoạn dịch vụ mạng.
++ ディレクトリトラバーサル攻撃 (Directory Traversal Attack): Tấn công truy cập trái phép vào các thư mục hệ thống.
+
+
+===============================================================
+################################################################
+🔥🔥🔥🔥暗号化技術の基本(KỸ THUẬT MÃ HÓA)🔥🔥🔥🔥🔥🔥
+  🧠 1. Mã hoá khoá đối xứng (共通暗号方式)
+👉 Sử dụng cùng một khoá để mã hoá và giải mã dữ liệu.
+  🧠 2. Mã hoá khoá công khai (公開鍵暗号方式)
+👉 Sử dụng hai khoá khác nhau: khoá công khai để mã hoá và khoá riêng tư để giải mã.
+  🧠 3. Mã hóa lai
+👉 Sử dụng mã hoá khoá công khai để trao đổi khoá chung, sau đó dùng khoá chung để mã hoá dữ liệu.
+
+Thuật toán mã hóá phổ biến
+  🧠 AES: Thuật toán mã hóa của phương thức khóa chung
+  🧠 RSA: Thuật toán mã hóa của phương thức khóa công khai, dựa trên độ khó của việc phân tích một số cực lớn ra thừa số nguyên tố
+
+  🧠 デジタル署名 (Chữ ký số)
+👉 Kỹ thuật sử dụng mã hoá khoá công khai để xác thực người gửi và đảm bảo tính toàn vẹn của dữ liệu.
+  🧠 ハッシュ関数 (Hàm băm)
+👉 Hàm băm là một hàm toán học chuyển đổi dữ liệu đầu vào thành một chuỗi ký tự có độ dài cố định, thường dùng để kiểm tra tính toàn vẹn của dữ liệu.
+
+  🧠 CA - (Certification Authority) Nhà cung cấp chứng thực số
+👉 Tổ chức phát hành và quản lý chứng chỉ số, xác nhận danh tính của các thực thể trong mạng.
+
+🧠 PKI (Public Key Infrastructure) Hạ tầng khoá công khai
+👉 Hệ thống quản lý khoá công khai và chứng chỉ số, bao gồm các thành phần như CA, khoá công khai, khoá riêng tư và quy trình xác thực.
