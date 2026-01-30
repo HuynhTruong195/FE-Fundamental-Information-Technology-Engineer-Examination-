@@ -2285,3 +2285,54 @@ Ví dụ: hệ thống phải hoạt động, không bị downtime lâu
 
 🧠 Mẹo FE:
 Nhớ theo chữ cái C-I-A → 機密・完全・可用
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	 ######## FIREWALL, IDS, IPS, WAF ########
+	
+🔐 技術的セキュリティ対策（3つの壁）
+🧱 1つめの壁：Firewall
+👉 Lọc kết nối /通信 theo rule
+Chặn truy cập không hợp lệ
+
+🧱 2つめの壁：IDS / IPS
+IDS: Phát hiện xâm nhập → chỉ cảnh báo
+IPS: Phát hiện xâm nhập → tự động chặn
+
+🧠 Khác nhau mấu chốt:
+IDS = 検知
+IPS = 検知＋遮断
+
+🧱 3つめの壁：WAF
+👉 Bảo vệ Web ứng dụng
+Chặn tấn công như SQL Injection, XSS
+
+🎯 Mẹo thi FE
+Thấy 通信制御 → Firewall
+Thấy 不正侵入の検知 → IDS / IPS
+Thấy Web攻撃 → WAF
+
+Nhớ cụm này là làm bài rất nhanh:
+👉 FW → IDS/IPS → WAF 💯
+
+	
+🟦 DMZ Demilitarized Zone 
+👉 Vùng mạng đệm giữa Internet và mạng nội bộ
+Đặt Web / Mail server để giảm rủi ro xâm nhập nội bộ
+
+🔒 SSL／TLS Secure Sockets Layer/Transport Layer Security
+👉 Mã hóa通信 trên mạng
+TLS là phiên bản mới, an toàn hơn SSL
+
+🌐 HTTPS HyperText Transfer Protocol Secure
+👉 HTTP + SSL/TLS
+Đảm bảo mã hóa + xác thực khi truy cập web
+
+📶 WPA3 Wi-Fi Protected Access 3
+👉 Chuẩn bảo mật Wi-Fi mới
+Mạnh hơn WPA2, chống dò mật khẩu tốt hơn
+
+🧠 Mẹo nhớ nhanh FE
+DMZ → mạng đệm
+SSL/TLS → mã hóa
+HTTPS → web an toàn
+WPA3 → Wi-Fi bảo mật
