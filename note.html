@@ -2198,3 +2198,270 @@ Thuật toán mã hóá phổ biến
 
 🧠 PKI (Public Key Infrastructure) Hạ tầng khoá công khai
 👉 Hệ thống quản lý khoá công khai và chứng chỉ số, bao gồm các thành phần như CA, khoá công khai, khoá riêng tư và quy trình xác thực.
+
+=====================================================
+	#########################################
+🌟 Quản lý rủi ro (リスクマネジメント) – trọng tâm thi FE
+🔁 4 quy trình quản lý rủi ro（rất hay ra đề）
+
+👉 リスク特定 → リスク分析 → リスク評価 → リスク対応
+
+リスク特定: Xác định rủi ro là gì
+リスク分析: Phân tích mức độ, khả năng xảy ra
+リスク評価: Đánh giá có chấp nhận được không
+リスク対応: Quyết định cách xử lý rủi ro
+
+🛠️ 4 cách xử lý rủi ro (リスク対応) – bắt buộc phải nhớ
+1️⃣ リスク回避 (Risk Avoidance – Né rủi ro)
+👉 Không làm công việc có rủi ro
+Ví dụ: loại bỏ hoàn toàn công việc nguy hiểm khỏi nghiệp vụ
+🧠 Keyword: やらない
+
+2️⃣ リスク低減 / リスク軽減 (Risk Reduction)
+👉 Giảm xác suất xảy ra rủi ro
+Ví dụ: áp dụng biện pháp bảo mật để giảm lỗ hổng
+🧠 Keyword: 確率を下げる
+
+3️⃣ リスク移転 (Risk Transfer)
+👉 Chuyển rủi ro sang bên khác
+Ví dụ: thuê ngoài, mua bảo hiểm
+Còn gọi: リスク共有・リスク転嫁
+🧠 Keyword: 他社へ
+
+4️⃣ リスク保有 / リスク受容 (Risk Retention)
+👉 Chấp nhận rủi ro
+Áp dụng khi chi phí phòng ngừa > thiệt hại dự kiến
+Nghĩa là không làm gì cả
+🧠 Keyword: 受け入れる
+
+🎯 Mẹo làm nhanh trong phòng thi
+
+Thấy 「作業をしない」 → リスク回避
+Thấy 「確率を下げる」 → リスク低減
+Thấy 「保険・外注」 → リスク移転
+Thấy 「何もしない・受け入れる」 → リスク保有
+
+------------------------------------------------------------
+* BCM (事業継続管理) 🟦 BCM (Business Continuity Management)
+	👉 Hoạt động quản lý để duy trì kinh doanh khi có sự cố
+
+* BCP (事業継続計画) 🟩 BCP (Business Continuity Plan)
+	👉 Kế hoạch cụ thể để duy trì kinh doanh khi có sự cố
+
+🧠 Nhớ khi thi FE:
+BCM = quản lý, BCP = kế hoạch
+	
+🎯 Mẹo thi FE
+Thấy 管理・運用・改善 → BCM
+Thấy 計画書・手順・シナリオ → BCP
+
+----------------------------------------------------------
+ISMS (情報セキュリティマネジメントシステム)
+	👉 Hệ thống quản lý an toàn thông tin của tổ chức
+	→ bảo mật 機密性・完全性・可用性（CIA）
+
+ISMS適合性評価制度
+	👉 Chế độ chứng nhận đánh giá tổ chức có phù hợp ISMS hay không
+	→ do bên thứ ba đánh giá, cấp chứng nhận
+
+🧠 Mẹo nhớ khi thi FE:
+ISMS = hệ thống quản lý. dùng tiêu chuẩn JIS Q 27001
+適合性評価制度 = chứng nhận / đánh giá.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+情報セキュリティマネジメントの三大特性 (3 đặc tính chính của bảo mật thông tin)
+
+1. 機密性（Confidentiality）
+Thông tin chỉ cho người được phép truy cập
+Ví dụ: mật khẩu, dữ liệu khách hàng
+
+2. 完全性（Integrity）
+Thông tin không bị thay đổi trái phép
+Ví dụ: dữ liệu không bị sửa, mất hoặc lỗi
+
+3. 可用性（Availability）
+Thông tin luôn sẵn sàng khi cần
+Ví dụ: hệ thống phải hoạt động, không bị downtime lâu
+
+🧠 Mẹo FE:
+Nhớ theo chữ cái C-I-A → 機密・完全・可用
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	 ######## FIREWALL, IDS, IPS, WAF ########
+	
+🔐 技術的セキュリティ対策（3つの壁）
+🧱 1つめの壁：Firewall
+👉 Lọc kết nối /通信 theo rule
+Chặn truy cập không hợp lệ
+
+🧱 2つめの壁：IDS / IPS
+IDS: Phát hiện xâm nhập → chỉ cảnh báo
+IPS: Phát hiện xâm nhập → tự động chặn
+
+🧠 Khác nhau mấu chốt:
+IDS = 検知
+IPS = 検知＋遮断
+
+🧱 3つめの壁：WAF
+👉 Bảo vệ Web ứng dụng
+Chặn tấn công như SQL Injection, XSS
+
+🎯 Mẹo thi FE
+Thấy 通信制御 → Firewall
+Thấy 不正侵入の検知 → IDS / IPS
+Thấy Web攻撃 → WAF
+
+Nhớ cụm này là làm bài rất nhanh:
+👉 FW → IDS/IPS → WAF 💯
+
+	
+🟦 DMZ Demilitarized Zone 
+👉 Vùng mạng đệm giữa Internet và mạng nội bộ
+Đặt Web / Mail server để giảm rủi ro xâm nhập nội bộ
+
+🔒 SSL／TLS Secure Sockets Layer/Transport Layer Security
+👉 Mã hóa通信 trên mạng
+TLS là phiên bản mới, an toàn hơn SSL
+
+🌐 HTTPS HyperText Transfer Protocol Secure
+👉 HTTP + SSL/TLS
+Đảm bảo mã hóa + xác thực khi truy cập web
+
+📶 WPA3 Wi-Fi Protected Access 3
+👉 Chuẩn bảo mật Wi-Fi mới
+Mạnh hơn WPA2, chống dò mật khẩu tốt hơn
+
+🧠 Mẹo nhớ nhanh FE
+DMZ → mạng đệm
+SSL/TLS → mã hóa
+HTTPS → web an toàn
+WPA3 → Wi-Fi bảo mật
+
+===============================================================
+################################################################
+🔥🔥🔥🔥KỸ THUẬT PHÁT TRIỂN HỆ THỐNG🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. Vòng đời phát triển phần mềm (SLCP Software Life Cycle Process) tiêu chuẩn ISO/IEC 15288
+👉 Các giai đoạn từ khi bắt đầu đến khi kết thúc phát triển phần mềm.
+  🧠 2. Khung chung 
+👉 Cấu trúc tổng thể của hệ thống phần mềm, bao gồm các thành phần và mối quan hệ giữa chúng.
+
+ QUÁ TRÌNH PHÁT TRIỂN HỆ THỐNG
+  🧠 1. 要件定義 (Xác định yêu cầu)
+👉 Xác định và thu thập yêu cầu của hệ thống từ người dùng và các bên liên quan, chức năng hay tính năng...
+
+  🧠 2. システム設計 (Thiết kế hệ thống)
+   + Thiết kế kiến trúc tổng thể của hệ thống: Phân loại các yêu cầu thành 1 trong 3 loại: phần cứng, phần mềm, thao tác thủ công.
+   + Định nghĩa các yêu cầu(システム要件定義): xác định các chức năng và tính năng,dk về mặt giao diện, dữ liệu... theo yêu cầu đã thu thập.
+   + Thiết kế kiến trúc phần mềm (ソフトウェアアーキテクチャ設計): xác định cấu trúc tổng thể của phần mềm, thiết kế theo 2 cách, cách xử lý hoặc theo dữ liệu(E-R or DFD).
+   + Thiết kế chi tiết phần mềm  (ソフトウェア詳細設計): chi tiết hóa thiết kế phần mềm, bao gồm các module, chức năng, giao diện, cơ sở dữ liệu...
+
+  🧠 3. Lập trình (Programming) 
+👉 Viết mã nguồn theo thiết kế đã định.
+
+  🧠 4. テスト (Kiểm thử)
+  + Kiểm thử được thực hiện để phát hiện lỗi và đảm bảo chất lượng phần mềm.
+   + 単体テスト (Kiểm thử đơn vị): kiểm thử từng module riêng lẻ.
+   + 結合テスト (Kiểm thử tích hợp): kiểm thử các module đã được tích hợp với nhau.
+   + システムテスト (Kiểm thử hệ thống): kiểm thử toàn bộ hệ thống.
+   + 運用テスト (Kiểm thử vận hành): kiểm thử trong môi trường thực tế.
+   + Kiểm thử hồi quy (リグレッションテスト): kiểm thử lại các chức năng đã được kiểm thử trước đó sau khi có thay đổi.
+
+🧠 DFD（データフロー図)
+  　  DFD (データフロー図)では、「○」 がプロセスを表す
+👉 Biểu đồ luồng dữ liệu, mô tả cách dữ liệu di chuyển qua hệ thống. Ký hiệu 「○」thể hiện 1 quy trình
+
+🧠 ソフトウェア方式設計: quá trình hiện thực hóa các yêu cầu đã được xác định
+🧠データ中心アプローチでは、データ構造に着目する: phương pháp tập trung vào cấu trúc dữ liệu
+
+
+🧠ソフトウェア詳細設計: quá trình chi tiết hóa thiết kế phần mềm
+xem xét các logic hoạt động, biểu diễn flowchart, chia nhỏ thành module. Độ kết hợp module thấp, khả năng bảo trì cao .  
+🧠モジュールの結合度: Độ kết hợp module
+Độ kết hợp module thấp → khả năng bảo trì cao
+Kết nối dữ liệu : Yếu
+Kết nối kiểu: Trung bình
+Kết nối điều khiển: Mạnh
+Két nối ngoài: Rất mạnh
+Kết nối chung: Cực mạnh
+Kết nối nội dung: Tuyệt đối
+
+Thiết kế ngoài và trong
+  Thiết kế ngoài: Xác định giao diện bên ngoài của hệ thống
+  Thiết kế trong: Xác định cấu trúc bên trong và hoạt động của hệ thống, logic xử lý.
+
+===============================================================
+################################################################
+🔥🔥🔥🔥LẬP TRÌNH VÀ HƯỚNG ĐỐI TƯỢNG 🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. Class và Object
+👉 Class là khuôn mẫu, Object là thể hiện cụ thể của class.
+  🧠 2. Data và Method
+👉 Data là thuộc tính, Method là hành vi của class.
+  🧠 3. Kế thừa (Inheritance) *
+👉 Class con kế thừa thuộc tính và phương thức từ class cha.
+  🧠 4. Đóng gói (Encapsulation) *
+👉 Ẩn dữ liệu và phương thức bên trong class, chỉ cho phép truy cập thông qua giao diện công khai.
+  🧠 5. Đa hình (Polymorphism)
+👉 Khả năng sử dụng cùng một phương thức với các đối tượng khác nhau, thực hiện hành vi khác nhau.
+
+TỔNG QUÁT HÓA - CHUYÊN BIỆT HÓA
+  🧠 1. Tổng quát hóa (Generalization) *
+👉 Quá trình tạo ra một class cha từ các class con có đặc điểm chung.
+
+  🧠 2. Chuyên biệt hóa (Specialization) *
+👉 Quá trình tạo ra các class con từ một class cha, thêm các đặc điểm riêng biệt.
+
+Trong sơ đồ lớp, khái quát hóa được biểu diễn bằng mũi tên rỗng từ lớp con đến lớp cha.
+
+
+UML (Unified Modeling Language)
+ Ngôn ngữ ký hiệu dùng để thiết kế hệ thống hướng đối tượng.
+Sơ đồ đối tượng (Class Diagram) オブジェクト図
+ Biểu diễn cấu trúc tĩnh của hệ thống, bao gồm các class, thuộc tính, phương thức và mối quan hệ giữa chúng.
+Sơ đồ trình tự (Sequence Diagram) シーケンス図
+ Biểu diễn luồng tương tác giữa các đối tượng theo thời gian.
+Sơ đồ lớp (Class Diagram) クラス図
+ Biểu diễn cấu trúc tĩnh của hệ thống, bao gồm các class, thuộc tính, phương thức và mối quan hệ giữa chúng.
+
+===============================================================
+################################################################
+🔥🔥🔥🔥KIỂM THỬ 🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. Kiểm thử hộp trắng 
+👉 kết hợp giữa dữ liệu đầu vào và kết quả mong đợi khi kiểm thử phần mềm bằng cách phân tích cấu trúc bên trong của chương trình. 
+  +Test case : hợp giữa dữ liệu đầu vào và kết quả mong đợi khi kiểm thử phần mềm.
+  CÁCH ĐỌC FLOW CHART
+  1. Hình chữ nhật: biểu diễn một bước xử lý.
+  2. Hình thoi: biểu diễn một điểm quyết định (if-else).
+  3. Mũi tên: biểu diễn luồng điều khiển giữa các bước.
+  4. Hình tròn: kết nối các phần khác nhau của sơ đồ, đặc biệt khi sơ đồ quá phức tạp.
+  5. Hình chữ nhật bo góc:  Biểu thị điểm bắt đầu và kết thúc của một quy trình hoặc chương trình.
+
+  🧠 2. Bao phủ lệnh（命令網羅） (Statement Coverage)
+👉  Mỗi câu lệnh thực thi ít nhất 1 lần không xét điều kiện, Múc độ bao phủ thấp nhất.
+
+  🧠 3. Bao phủ điều kiện quyết định（判断条件網羅） (Decision Coverage) hay gọi là  bao phủ phân nhánh (Branch Coverage)
+👉 Mỗi nhánh của điểm quyết định được thực thi ít nhất 1 lần, bao gồm cả nhánh true và false.
+
+  🧠 4. Bao phủ điều kiện（条件網羅） (Condition Coverage)
+👉 Mỗi điều kiện trong điểm quyết định được thực thi ít nhất 1 lần với giá trị true và false.
+
+  🧠 5. Bao phủ điều kiện/Quyết định（条件網羅/判断条件網羅） (Decision/Condition Coverage)
+👉 Kết hợp cả bao phủ điều kiện và bao phủ quyết định, đảm bảo mỗi điều kiện và mỗi nhánh được thực thi ít nhất 1 lần.
+
+  🧠 6. Bao phủ nhiều điều kiện（複数条件網羅） (Multiple Condition Coverage)
+👉 là kiểm thử trong đó tất cả các kết hợp của các điều kiện đúng và sai được thực thi ít nhất một lần.
+
+  🧠 7. Kiểm thử hộp đen  
+👉 kiểm thử chỉ tập trung vào đầu vào và đầu ra của hệ thống, và xác nhận xem đầu ra có khớp với yêu cầu trong tài liệu đặc tả hay không, dựa trên các đầu vào nhất định
+
+  🧠 8. Kiểm thử Top-down và Bottom-up
+  Module là đơn vị phân chia chương trình theo chức năng, Các modulte này được chia thành 2 loại: module cấp trên (lớp cha) và module cấp dưới (lớp con).
+  + Module cấp trên: gọi các module khác.
+  + Module cấp dưới: được các module khác gọi.
+
+👉 Top-down: kiểm thử từ lớp cao nhất xuống lớp thấp hơn.
+* trong quá trình kiểm tra thì các module cấp dưới có thể chưa hoàn thiện. vì vậy nên sử dụng Stub
+  + Stub: giả các lớp con chưa hoàn thiện để quá trình kiêm thử có thể tiếp tục.
+
+👉 Bottom-up: kiểm thử từ lớp thấp nhất lên lớp cao hơn.
+* trong quá trình kiểm tra thì các module cấp trên có thể chưa hoàn thiện. vì vậy nên sử dụng Driver
+  + Driver: giả các lớp cha để kiểm thử các lớp con.
