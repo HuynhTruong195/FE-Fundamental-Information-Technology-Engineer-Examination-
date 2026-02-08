@@ -2575,7 +2575,7 @@ TRONG KỲ THI FE
   Thời gian phát triển = Số giờ phát triển ÷ Số nhân lực
   開発期間 = 開発工数 ÷ 要員数
 
-    👉 Quản lý thời gian dự án
+    👉 QUẢN LÝ THỜI GIAN DỰ ÁN
   3 sơ đồ chính thường dùng
     1. Sơ đồ xu hướng (Trend Chart)
     2. Sơ đồ mũi tên (Arrow Diagram)
@@ -2611,3 +2611,72 @@ Method. Trong kỳ thi, Critical Chain Method (クリティカルチェーン法
 sai trong các câu hỏi liên quan đến Critical Path.
 Bên cạnh đó, Phương pháp Monte Carlo (モンテカルロ法) cũng thường xuyên là một lựa chọn sai trong các câu hỏi tương tự. 
 
+ 👉 QUẢN LÝ CHI PHÍ DỰ ÁN 
+  🧠 Phương pháp ước lượng chi phí 
+  -  kỹ thuật được sử dụng để ước tính công sức phát triển hệ thống,
+  bao gồm thời gian, phạm vi, số lượng nhân viên, v.v.
+
+    🧠 phương pháp Function Point (ファンクションポイント法) 
+    - Ước lượng chi phí dựa trên chức năng của hệ thống (nhập liệu, xuất báo cáo...) được gán điểm số 
+    để tính độ phức tạp và công sức cần thiết 
+      Các loại chức năng người dùng :
+    1. Nhập dữ liệu từ bên ngoài (外部入力)
+     - Người dùng thao tác với màn hình để nhập dữ liệu vào hệ thống.
+    2. Xuất dữ liệu ra bên ngoài (外部出力)
+      - Hệ thống xuất dữ liệu ra màn hình tuy nhiên dữ liệu dã được xử lý hoặc tính toán.
+    3. Quản lý dữ liệu ngoài (外部照会)
+      - Hệ thống truy xuất và hiển thị dữ liệu từ bên ngoài mà không qua xử lý.
+    4. Tệp nội bộ (内部論理ファイル)
+      - Tệp dữ liệu được quản lý và sử dụng bên trong hệ thống.
+    5. Tệp bên ngoài (外部インターフェースファイル)
+      - Tệp dữ liệu được chia sẻ và sử dụng giữa hệ thống và các hệ thống khác.
+
+   ** Cách tính function point của hệ thống
+    1. Nhân số lượng các chức năng với trọng số của chúng để tính tổng điểm tạm thời.
+    2. Nhân kết quả với hệ số điều chỉnh độ phức tạp để tính toán ước lượng cuối cùng.
+VD: Nhập ngoài: 3 chức năng, trọng số 4 → 3*4=12 điểm
+Xuất ngoài: 2 chức năng, trọng số 5 → 2*5=10 điểm
+Tổng điểm tạm thời = 12 + 10 = 22 điểm
+ví dụ: Hệ số điều chỉnh độ phức tạp = 1.2
+Ước lượng cuối cùng = 22 * 1.2 = 26.4
+
+👉QUẢN LÝ DỊCH VỤ VÀ CHUYỂN GIAO HỆ THỐNG
+  🧠 1. Quản lý dịch vụ 
+👉 Quản lý dịch vụ CNTT để đảm bảo chất lượng và hiệu quả.
+  - Hệ thống quản lý dịch vụ SMS (Service Management System): Hệ thống được thiết kế để quản lý và cung cấp dịch vụ CNTT một cách hiệu quả.
+  - Quản lý dịch vụ IT(IT Service Management - ITSM): Quản lý dịch vụ CNTT dựa trên các quy trình và tiêu chuẩn như ITIL.
+  🧠 2. Mức độ dịch vụ 
+👉 Thỏa thuận về mức độ dịch vụ (Service Level Agreement - SLA): Thỏa thuận giữa nhà cung cấp dịch vụ và khách hàng về chất lượng và phạm vi dịch vụ.
+
+🔥🔥ĐIỂM CẦN NHỚ:
+- QUẢN LÝ DỊCH VỤ: là một quá trình liên tục nhằm duy trì và cải thiện dịch vụ. 
+- MỨC ĐỘ DỊCH VỤ(SLM): là chất lượng dịch vụ mà người sử dụng mong đợi và nhà cung cấp cam kết cung cấp.
+    + SLA là thỏa thuận cụ thể về mức độ dịch vụ giữa nhà cung cấp và khách hàng.
+    + Khả năng sử dụng là một yếu tố quan trọng trong dịch vụ, đảm bảo dịch vụ luôn sẵn sàng khi cần thiết.
+- HỆ THỐNG QUẢN LÝ DỊCH VỤ (SMS) và QUẢN LÝ DỊCH VỤ IT (ITSM) là các công cụ và phương pháp để thực hiện quản lý dịch vụ một cách hiệu quả.
+
+** ITIL (IT Infrastructure Library)
+  👉 Bộ tài liệu hướng dẫn quản lý dịch vụ CNTT, bao gồm các quy trình và thực tiễn tốt nhất.
+  Tiêu chuẩn ISO/IEC 20000 và JIS Q 20000
+  👉 Tiêu chuẩn quốc tế về quản lý dịch vụ CNTT cung cấp khuôn khổ để các tổ chức quản lý dịch vụ hiệu quả 
+
+  ** PDCA (Plan-Do-Check-Act)
+  P: Lập kế hoạch (Plan)
+  D: Thực hiện (Do)
+  C: Kiểm tra (Check)
+  A: Cải tiến (Act)
+
+🧠 CHUYỂN GIAO HỆ THỐNG
+  1. Chuyển giao đồng loạt (一斉移行方式): Dừng hệ thống cũ và chuyển sang hệ thống mới cùng lúc.
+  2. Chuyển giao từng phần (段階移行方式): Chuyển đổi từng phần của hệ thống thành các giai đoạn nhỏ.
+  3. Chuyển giao song song (並行移行方式): Vận hành hệ thống cũ và mới cùng lúc trong một khoảng thời gian.
+  👉Chuyển giao đồng loạt là phương pháp rủi ro cao nhất vì nếu có sự cố xảy ra, toàn bộ hệ thống sẽ bị ảnh hưởng ngay lập tức.
+
+===============================================================
+################################################################
+🔥🔥🔥🔥HỖ TRỢ DỊCH VỤ🔥🔥🔥🔥🔥🔥🔥🔥
+  🧠 1. Quản lý sự cố 
+  - Khôi phục dịch vụ nhanh chóng khi có sự cố xảy ra.
+   + Các lỗi đã biết (既知の誤り): Lỗi đã được xác định và có giải pháp khắc phục.
+    nếu có phương án tránh né khi ng dùng báo cáo thì có thể xử lý lập tức mà ko cần mất tgian điều tra nguyên nhân.
+    -> giúp tiết kiệm thời gian khôi phục dịch vụ.
