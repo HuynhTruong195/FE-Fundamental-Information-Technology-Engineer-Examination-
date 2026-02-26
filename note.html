@@ -2439,13 +2439,13 @@ Sơ đồ lớp (Class Diagram) クラス図
   🧠 2. Bao phủ lệnh（命令網羅） (Statement Coverage)
 👉  Mỗi câu lệnh thực thi ít nhất 1 lần không xét điều kiện, Múc độ bao phủ thấp nhất.
 
-  🧠 3. Bao phủ  quyết định（判断網羅） (Decision Coverage) hay gọi là  bao phủ phân nhánh (Branch Coverage)
+  🧠 3. Bao phủ điều kiện quyết định（判断条件網羅） (Decision Coverage) hay gọi là  bao phủ phân nhánh (Branch Coverage)
 👉 Mỗi nhánh của điểm quyết định được thực thi ít nhất 1 lần, bao gồm cả nhánh true và false.
 
   🧠 4. Bao phủ điều kiện（条件網羅） (Condition Coverage)
 👉 Mỗi điều kiện trong điểm quyết định được thực thi ít nhất 1 lần với giá trị true và false.
 
-  🧠 5. Bao phủ điều kiện/Quyết định（判断条件網羅） (Decision/Condition Coverage)
+  🧠 5. Bao phủ điều kiện/Quyết định（条件網羅/判断条件網羅） (Decision/Condition Coverage)
 👉 Kết hợp cả bao phủ điều kiện và bao phủ quyết định, đảm bảo mỗi điều kiện và mỗi nhánh được thực thi ít nhất 1 lần.
 
   🧠 6. Bao phủ nhiều điều kiện（複数条件網羅） (Multiple Condition Coverage)
@@ -2756,3 +2756,43 @@ Dịch vụ hõ trợ (Service Desk)
   - Là công cụ kiểm soát và giám sát nội bộ để đảm bảo hoạt động hiệu quả và tuân thủ quy định.
   🧠 3. Phân công nhiện vụ (職務分掌)
   - Làm rõ trách nhiệm và quyền hạn của từng bộ phận và cá nhân trong doanh nghiệp.
+
+  ==============================================================
+################################################################
+🔥🔥🔥🔥CHIẾN LƯỢC HỆ THỐNG THÔNG TIN 情報システム戦略🔥🔥🔥🔥🔥🔥
+🧠1. Chiến lược hệ thống thông tin (Information System Strategy) 情報システム戦略とは
+- Chiến lược hệ thống thông tin là chiến lược theo từng chức năng sử dụng hệ thống thông tin. 
+Vd mô hình doanh nghiệp như hình kim tự tháp (ピラミッド) thì cao nhất là 経営理念, thấp hơn là ビジョン、企業戦略、事業戦略、機能別戦略
+trong đó chiến lược hệ thống thông tin là một phần của chiến lược chức năng (機能別戦略) và có vai trò hỗ trợ các chiến lược khác trong doanh nghiệp.
+
+基本情報技術者試験では「情報システム戦略」のことを「情報戦略」と表記する場合があります。
+
+🧠2. Tối ưu hóa tổng thể 全体最適化
+- việc làm tăng hiệu quả của toàn bộ hệ thống 
+🧠3. Tối ưu hóa cục bộ 部分最適化
+- việc làm tăng hiệu quả của một phần của hệ thống mà không quan tâm đến ảnh hưởng đến toàn bộ hệ thống.
+
+Tuy nhiên khi hoạch định chiến lược hệ thống thông tin nên chọn tối ưu hóa toàn bộ thay vì cục bộ. 
+
+🧠4. Kiến trúc doanh nghiệp (Enterprise Architecture) エンタープライズアーキテクチャ 🔥EA🔥
+- Là một khuôn khổ để thiết kế và quản lý hệ thống thông tin của doanh nghiệp, 
+bao gồm các thành phần như kiến trúc kinh doanh, kiến trúc ứng dụng, kiến trúc dữ liệu và kiến trúc công nghệ.
+  CÓ 2 ĐIỂM CẦN NHỚ
+  (1) Định nghĩa kiến trúc doanh nghiệp: Phương pháp tối ưu toàn bộ hệ thống thông tin của doanh nghiệp lớn, chính phủ...
+  (2) Phân loại 4 kiến trúc doanh nghiệp chính 
+      👉Kiến trúc Doanh nghiệp (Business Architecture): Phân tích các hoạt động kinh doanh.
+      👉Kiến trúc Dữ liệu (Data Architecture): Phân tích dữ liệu cần thiết cho các hoạt động.
+      👉Kiến trúc Ứng dụng (Application Architecture): Phân tích các chức năng cần thiết để xử lý dữ liệu.
+      👉Kiến trúc Công nghệ (Technology Architecture): Phân tích các công nghệ cần thiết để thực hiện các chức năng.
+
+
+Trong Kiến trúc Doanh nghiệp, thay vì phân tích hệ thống riêng biệt, ta sử dụng 4 hệ thống kiến trúc
+để phân tích toàn diện các hệ thống một cách xuyên suốt và kết nối giữa các bộ phận.
+
+TÓM LẠI
+エンタープライズアーキテクチャとは: Kỹ thuật phân tích doanh nghiệp trong 4 hệ thống thông tin như "kinh doanh", "dữ liệu", "ứng dụng", "công nghệ"
+  và xem ét hệ thống từ góc  độ tối ưu hóa tổng thể thay vì cục bộ.
+ビジネスアーキテクチャとは、業務のこと: Phân tích các hoạt động kinh doanh của doanh nghiệp.
+データアーキテクチャとは、 業務に必要なデータのこと : Phân tích dữ liệu cần thiết cho các hoạt động kinh doanh.
+アプリケーションアーキテクチャとは、データを処理するための機能のこと: Phân tích các chức năng cần thiết để xử lý dữ liệu.
+テクノロジアーキテクチャとは、 機能を実現するための技術のこと: Phân tích các công nghệ cần thiết để thực hiện các chức năng.
