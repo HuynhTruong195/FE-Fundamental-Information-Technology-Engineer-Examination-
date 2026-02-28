@@ -2803,9 +2803,154 @@ TÓM LẠI
 🔥🔥🔥🔥QUY TRÌNH NGHIỆP VỤ 業務プロセス🔥🔥🔥🔥🔥🔥
 	Khái niệm: Là Trình Tự Công Việc , Nghiệp vụ đc cấu thành từ công việc thủ công và hệ thống (phần cứng, phần mềm)
 
-🧠1.BPR (Business Process Re-engineering: Tái cấu trúc toàn bộ hệ thống một cách tổng thể.
-🧠2.BPM (Business Process Management: Quản lý và cải tiến liên tục các quy trình hiện có để nâng cao nâng suất, chaat lượng.
+🧠1.BPR (Business Process Re-engineering): Tái cấu trúc toàn bộ hệ thống một cách tổng thể.
+🧠2.BPM (Business Process Management): Quản lý và cải tiến liên tục các quy trình hiện có để nâng cao nâng suất, chaat lượng.
 🧠3.RPA (Robotic Process Automation): Sử dụng phần mềm robot để tự động hóa các công việc lặp đi lặp lại trên máy tính. như nhập liệu, xử lý hóa đơn, email...
 🧠4.BPO (Business Process Outsourcing): Thuê cty bên ngoài thực hiện 1 số quy trình kinh doanh như thuê cty kế toán, cskh, nhập liệu.
 🧠5.Hệ thống quy trình công việc (Workflow System): là hệ thống giúp tự động hóa và quản lý các bước trong một quy trình công việc, đảm bảo các nhiệm vụ được thực hiện đúng người, đúng lúc, đúng trình tự.	
 	
+  ==============================================================
+################################################################
+🔥🔥🔥🔥KINH DOANH VÀ GIẢI PHÁP ソリューションビジネス  🔥🔥🔥🔥🔥🔥
+Khái niệm: Kinh doanh giải pháp là việc cung cấp các giải pháp tổng thể cho khách hàng, bao gồm cả phần cứng, phần mềm và dịch vụ liên quan.
+
+🧠SOA（Service Oriented Architecture / サービス指向アーキテクチャ
+  👉 Kiến trúc thiết kế hệ thống theo “dịch vụ” (service) độc lập, mỗi chức năng được tách thành một service riêng và giao tiếp với nhau qua mạng.
+
+    Ý chính hay ra trong FE (ngắn gọn nhất):
+      Chia hệ thống thành các service độc lập
+      Các service giao tiếp qua mạng (ví dụ HTTP, SOAP, REST)
+      Tái sử dụng được (reusable)
+      Giảm phụ thuộc giữa các hệ thống (loose coupling)
+
+    Ví dụ dễ hiểu:
+      Hệ thống bán hàng gồm:
+      Service thanh toán
+      Service quản lý kho
+      Service giao hàng
+
+    Mỗi cái chạy độc lập nhưng gọi nhau khi cần.
+
+🧠Các hình thức của giải pháp(Solution)
+  1. On-Premises Solution (オンプレミスソリューション): Đặt máy chủ tại khuôn viên công ty và tự quản lý.
+      +Ưu điểm: Kiểm soát hoàn toàn, bảo mật cao.
+      +Nhược điểm: Chi phí đầu tư ban đầu cao, yêu cầu kỹ thuật cao
+  2. Dịch vụ Housing (ハウジングサービス): Đặt máy chủ công ty mình tại khuôn viên công ty khác và thuê họ quản lý.
+      +Ưu điểm: Giảm chi phí đầu tư ban đầu, không cần quản lý kỹ thuật.
+      +Nhược điểm: Phụ thuộc vào nhà cung cấp dịch vụ, bảo mật có thể là vấn đề.
+  3. Dịch vụ Hosting (ホスティングサービス): Thuê máy chủ từ nhà cung cấp dịch vụ và họ quản lý toàn bộ.
+      +Ưu điểm: Không cần quản lý kỹ thuật, chi phí thấp.
+      +Nhược điểm: Phụ thuộc hoàn toàn vào nhà cung cấp dịch vụ, bảo mật có thể là vấn đề.
+  4. Dịch vụ đám mây (クラウドサービス): Sử dụng tài nguyên máy chủ qua internet từ nhà cung cấp dịch vụ đám mây.
+      +Ưu điểm: Linh hoạt, mở rộng dễ dàng, chi phí theo sử dụng.
+      +Nhược điểm: Phụ thuộc vào nhà cung cấp dịch vụ, bảo mật có thể là vấn đề.
+
+ 🔥 Cloud Computing có thể phân thành nhiều loại khác nhau tùy theo loại dịch vụ được cung cấp 
+  1. IaaS (Infrastructure as a Service): Cung cấp hạ tầng máy chủ, lưu trữ, mạng.
+  2. PaaS (Platform as a Service): Cung cấp nền tảng phát triển ứng dụng.
+  3. SaaS (Software as a Service): Cung cấp phần mềm qua internet.
+
+  Ví dụ về các nhà cung cấp dịch vụ đám mây:
+  - Amazon Web Services (AWS)
+  - Microsoft Azure
+  - Google Cloud Platform (GCP)
+
+  Trước khi có SOA thì các hệ thống thường được xây dựng theo mô hình monolithic, tức là tất cả các chức năng được tích hợp trong một ứng dụng duy nhất. Điều này dẫn đến việc khó bảo trì, mở rộng và tái sử dụng.
+  Với SOA, các chức năng được tách thành các service độc lập, giúp giảm phụ thuộc giữa các hệ thống, tăng tính linh hoạt và khả năng tái sử dụng. Các service có thể được phát triển, triển khai và bảo trì độc lập, giúp cải thiện hiệu quả và giảm chi phí phát triển.  
+  👉● SOA là phương pháp xây dựng hệ thống bằng cách kết hợp các dịch vụ độc lập với nhau để tạo thành một hệ thống lớn hơn.
+
+================================================================
+################################################################
+🔥🔥🔥🔥THÚC ĐẨY ỨNG DỤNG VÀ ĐÁNH GIÁ HỆ THỐNG システムの活動促進と評価🔥🔥🔥🔥🔥🔥
+Trong kỳ thi, các thuật ngữ như "BI", "Digital Divide", "Data Mining", "Big
+  Data" thường xuyên xuất hiện.
+  🧠 BI (Business Intelligence)
+  - Là quá trình thu thập, phân tích và trình bày dữ liệu để hỗ trợ quyết định kinh doanh.
+
+  🧠 Big data và data mining
+  - Big Data: Dữ liệu lớn, phức tạp và có tốc độ cập nhật nhanh như văn bản, âm thanh, hình ảnh, video...
+    Có 3 đặc điểm chính: Volume (khối lượng), Velocity (tốc độ), Variety (đa dạng).
+   - Data Mining: Tìm ra thông tin hữu ích từ khối dữ liệu khổng lồ
+   - Hồ dữ liệu (Data Lake): Nơi lưu trữ dữ liệu thô, chưa được xử lý, có thể là bất kỳ loại dữ liệu nào.
+   - Kho dữ liệu (Data Warehouse): Nơi lưu trữ dữ liệu đã được xử lý theo định dạng nhất định để phục vụ cho việc phân tích và báo cáo.
+
+  🧠 Digital Divide (デジタルデバイド)
+  - Khoảng cách kỹ thuật số, sự chênh lệch trong việc tiếp cận và sử dụng công nghệ thông tin giữa các nhóm người hoặc khu vực.
+
+  🧠 Information Literacy
+  - Khả năng tìm kiếm, đánh giá và sử dụng thông tin một cách hiệu quả.
+
+  TÓM TẮT:
+  📝 Nội dung quan trọng trong kỳ thi!
+  ● BI là phương pháp phân tích dữ liệu trong và ngoài công ty để hỗ trợ ra quyết định trong quản lý
+  ● Đặc điểm của Big Data là "lượng lớn", "đa dạng", "tốc độ cập nhật nhanh"
+  ● Data Mining là việc tìm ra thông tin hữu ích từ khối dữ liệu khổng lồ
+  ● Digital Divide là sự chênh lệch kinh tế, xã hội phát sinh do sự khác biệt về năng lực sử dụng
+  thông tin
+
+  ==============================================================
+################################################################    
+🔥🔥🔥🔥🔥CÔNG TY VÀ ĐỊNH NGHĨA YÊU CẦU🔥🔥🔥🔥🔥
+🧠 Như đã trình bày ở các bài trước, Khung công việc chung (Common Frame) gồm 5 quy
+    trình chính: lập kế hoạch, xác định yêu cầu, phát triển, vận hành, và bảo trì.
+ Những thuật ngữ hay xuất hiện trong kỳ thi FE:
+  ● Quy trình lập kế hoạch
+  ● Kế hoạch hệ thống hóa
+  ● ROI (Tỷ suất lợi nhuận đầu tư)
+
+1. Quy trình lập kế hoạch
+- Mục tiêu lắng nghe nhu cầu kinh doanh và xác định các yêu cầu của hệ thống thông tin để hỗ trợ hoạt động kinh doanh.
+- Các bước chính:
+  1. Lập ý tưởng hệ thống hóa : Xác nhận nhu cầu và vấn đề trong kinh doanh
+  2. Lập kế hoạch hệ thống hóa : Xác định phạm vi, mục tiêu, nguồn lực và lịch trình cho dự án.
+  
+👉ROI (Return on Investment- Tỷ suất lợi nhuận đầu tư)
+  - là một chỉ số dùng để đánh giá hiệu quả chi phí (cost-performance) của hệ thống thông tin.
+  CÔNG THỨC: ROI = TIỀN LỜI / TIỀN ĐÂU TƯ
+👉IT Portfolio
+- là phương pháp phân loại các khoản đầu tư công nghệ thông tin theo rủi ro và giá trị đầu tư, từ đó tối ưu hóa phân bổ ngân sách.
+  + "Giá trị đầu tư" là hiệu quả chi phí (được đo bằng ROI).
+  + "Đầu tư CNTT" là chi phí để phát triển, duy trì và cải thiện hệ thống.
+👉Privacy by Design
+-  Là cách thiết kế hệ thống có sẵn biện pháp ngăn ngừa rò rỉ thông tin cá nhân ngay từ đầu.
+    ● Giảm nguy cơ xảy ra sự cố
+    ● Giảm thiệt hại và chi phí xử lý sau sự cố
+
+🧠TÓM TẮT:
+  📝 Nội dung quan trọng trong kỳ thi!
+    ● Trong lập ý tưởng hệ thống hóa → cần xác nhận nhu cầu kinh doanh
+    ● Trong lập kế hoạch hệ thống hóa → cần làm rõ hiệu quả đầu tư
+    ● ROI là tỷ suất lợi nhuận đầu tư = Lợi nhuận / Chi phí
+    ● IT Portfolio là phân loại đầu tư theo rủi ro và giá trị
+    ● Privacy by Design là chủ động tích hợp bảo vệ thông tin cá nhân vào hệ thống
+
+🔥SAU QUY TRÌNH LẬP KẾ HOẠCH LÀ QUY TRÌNH XÁC ĐỊNH YÊU CẦU
+  🧠 1. Xác định yêu cầu (Requirements Definition)
+  - Là quá trình thu thập, phân tích và xác định các yêu cầu của hệ thống thông tin để đáp ứng nhu cầu kinh doanh.
+  - Các bước chính:
+    1. Thu thập yêu cầu: Phỏng vấn, khảo sát, quan sát...
+    2. Phân tích yêu cầu: Phân loại, ưu tiên, xác định mối quan hệ giữa các yêu cầu.
+    3. Xác định yêu cầu: Tài liệu hóa các yêu cầu đã được phân tích và xác nhận với các bên liên quan.
+
+🔥SAU KHI THU THẬP THÔNG TIN CẦN TỔNG HỢP VÀ LÀM RÕ YÊU CẦU NGHIỆP VỤ
+- Điều kiện về TỔ CHỨC: Những điều kiện về mặt tổ chức để  hoàn thành được nghiệp vụ như cơ sở vật chất, nhân lực, quy trình...
+- Điều kiện về CHỨC NĂNG: Những điều kiện về mặt chức năng được làm rõ sau khi lắng nghe yêu cầu của khách hàng.vd: xử lý đơn hàng, quản lý kho, thanh toán...
+- Điều kiện PHI CHỨC NĂNG: Những yêu cầu k có từ khách hàng nhưng cần thiết cho hệ thống như bảo mật, hiệu suất, khả năng mở rộng...
+
+🔥Yêu cầu phi chức năng và phát triển theo chuẩn
+Trong đề thi, phần thường xuất hiện nhất là: Yêu cầu phi chức năng về tiêu chuẩn phát triển kỹ thuật
+� Tiêu chuẩn phát triển, chuẩn mực là các tài liệu quy định sẵn về 
+    + Phương pháp phát triển,
+    + Quy tắc lâp trình,
+    + Khung kỹ thuật,
+🎯 Việc có sẵn các tiêu chuẩn này giúp
+    + Tăng hiệu suất phát triển,
+    + Cải thiện chất lượng hệ thống,
+    + Dễ bảo trì và vận hành hệ thống sau này.
+
+ 🧠TÓM TẮT: 
+  📝 Nội dung quan trọng trong kỳ thi!
+    ● Trong quy trình xác định yêu cầu → Phải xác định nhu cầu của các bên liên quan
+    ● Một trong các tác vụ của yêu cầu phi chức năng là → Tạo ra bộ tiêu chuẩn phát triển phù hợp
+    với ngôn ngữ lập trình được sử dụng trong phát triển hệ thống
+  ==============================================================
