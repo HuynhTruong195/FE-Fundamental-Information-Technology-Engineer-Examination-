@@ -81,6 +81,16 @@ Phần thập phân
 KẾT QUẢ:
 ➡ 117.25(10) = 1110101.01(2)
 
+VD 38.625 hệ 10 đổi sang hệ 2
+32  16  8  4  2  1 - 0.5  0.25  0.125
+1   0   0  1  1  0 .  1    0     1
+kêt quả: 38.625(10) = 100110.101(2)
+
+cách khác chia cho 2 đến khi phần số bị chia bằng 0 thì dưng. Đọc ngược lại từ dưới lên trên
+với phần thập phân thì nhân 2 đến khi két quả bằng 1 thì dừng. Đọc theo thứ tự từ trên xuống dưới
+vd  0.625 x 2 = 1.25 → 1
+    1.25 x 2 = 0.5 → 0
+    0.5 x 2 = 1.0 → 1 dừng. Đọc theo thứ tự: 0.101(2)
 
 
 4️⃣ Nhị phân ↔ Bát phân (2 ↔ 8)
@@ -106,17 +116,18 @@ Ví dụ:
 
 📌 Không cần tính toán – chỉ nhóm bit
 
+hệ 8 sang hệ 2 thì tách từng số ra rồi đổi sang 3 bit
+vd: 63.5 hệ 8 đổi sang hệ 2
+6 -> 110
+3 -> 011
+5 -> 101
+kết quả: 63.5(8) = 110011.101(2)
+
+
 5️⃣ Nhị phân ↔ Thập lục phân (2 ↔ 16)
 
 👉 4 bit = 1 chữ số hex
 
-Nhị phân	Hex
-    0000	0
-    1001	9
-    1010	A
-    1011	B
-    1100	C
-    1111	F
 
 Ví dụ:
   
@@ -2439,7 +2450,7 @@ Sơ đồ lớp (Class Diagram) クラス図
   🧠 2. Bao phủ lệnh（命令網羅） (Statement Coverage)
 👉  Mỗi câu lệnh thực thi ít nhất 1 lần không xét điều kiện, Múc độ bao phủ thấp nhất.
 
-  🧠 3. Bao phủ quyết định（判断網羅） (Decision Coverage) hay gọi là  bao phủ phân nhánh (Branch Coverage)
+  🧠 3. Bao phủ điều kiện quyết định（判断条件網羅） (Decision Coverage) hay gọi là  bao phủ phân nhánh (Branch Coverage)
 👉 Mỗi nhánh của điểm quyết định được thực thi ít nhất 1 lần, bao gồm cả nhánh true và false.
 
   🧠 4. Bao phủ điều kiện（条件網羅） (Condition Coverage)
@@ -3375,7 +3386,7 @@ CGM (Consumer Generated Media) là nội dung do người tiêu dùng tạo ra t
   OJT và Off-JT
   - OJT (On-the-Job Training) là đào tạo tại chỗ, học việc trực tiếp trong công việc hàng ngày.
   - Off-JT (Off-the-Job Training) là đào tạo ngoài công việc, thường là các khóa học, hội thảo, hoặc đào tạo tại trung tâm.
-
+   
   🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠
   1️⃣ ABC分析
 ABC分析とは、
@@ -3429,4 +3440,62 @@ thấy 重要度 / A B C → ABC分析
 
     đầu cá → vấn đề
     xương → nguyên nhân
+
+==============================================================
+#################################################################
+🔥🔥 BÁO CÁO TÀI CHÍNH 🔥🔥
+貸借対照表は、ある時点の企業の資産、負債および純資産が記載された表
+bảng cân đối kế toán, thể hiện tài sản, nợ phải trả và vốn chủ sở hữu của doanh nghiệp tại một thời điểm cụ thể.
+
+資本金は、純資産の部に分類される
+vốn đầu tư được phân loại vào tài sản ròng.
+
+  CÁC THUẬT NGỮ CHÍNH 
+- 売上高 (Doanh thu): Tổng doanh thu
+- 売上原価 (Giá vốn hàng bán): Chi phí sản xuất.
+★ 売上総利益 (Lợi nhuận gộp): Tiền lãi sau khi trừ chi phí. 
+- 販売費及び一般管理費 hoặc 「販管費」: chi phí bán hàng và quản lý chung.
+★営業利益 (Lợi nhuận hoạt động): Lợi nhuận sau khi trừ chi phí bán hàng và quản lý chung.
+- 営業外収益 (Thu nhập khác): Thu nhập không liên quan đến hoạt động kinh doanh chính.
+- 営業外費用 (Chi phí khác): Chi phí không liên quan đến hoạt động kinh doanh chính.
+★経常利益 (Lợi nhuận thường xuyên): Lợi nhuận sau khi trừ thu nhập khác và chi phí khác.
+- 特別利益 (Lợi nhuận đặc biệt): Lợi nhuận từ các hoạt động không thường xuyên, như bán tài sản.
+- 特別損失 (Lỗ đặc biệt): Lỗ từ các hoạt động không thường xuyên, như thiên tai.
+★税引前当期純利益 (Lợi nhuận trước thuế): Lợi nhuận sau khi trừ lợi nhuận đặc biệt và lỗ đặc biệt.
+- 法人税等 (Thuế doanh nghiệp): Thuế phải trả cho chính phủ.
+★当期純利益 (Lợi nhuận ròng): Lợi nhuận sau khi trừ thuế doanh nghiệp.
+
+  TÓM TẮT:
+  📝 Nội dung quan trọng trong kỳ thi!
+    ● 売上高 là tổng doanh thu
+    ● 売上原価 là chi phí sản xuất
+    ● 営業利益 là lợi nhuận sau khi trừ chi phí bán hàng và quản lý chung
+    ● 経常利益 là lợi nhuận sau khi trừ thu nhập khác và chi phí khác
+    ● 税引前当期純利益 là lợi nhuận sau khi trừ lợi nhuận đặc biệt và lỗ đặc biệt
+    ● 当期純利益 là lợi nhuận sau khi trừ thuế doanh nghiệp
+
+
+Nhật	English	Tiếng Việt	Ý nghĩa
+中央値	Median	Trung vị	Giá trị ở giữa
+最頻値	Mode	Mốt	Giá trị xuất hiện nhiều nhất
+平均値	Mean	Trung bình	Tổng chia số lượng
+分散	Variance	Phương sai	Mức độ phân tán
+標準偏差	Standard Deviation	Độ lệch chuẩn	Độ phân tán thực tế
+
+単回帰分析: Phân tích hồi quy đơn
+  X tăng → Y tăng (Thời tiết đẹp -> Dự đoán doanh số cà phê tăng)
+重回帰分析: Phân tích hồi quy đa biến
+  nhiều X tăng → Y tăng (Các yếu tố như thời tiết, giá cả, ngày... -> Dự đoán doanh số cà phê tăng)
+ロジスティック回帰分析: Phân tích hồi quy logistic
+  X tăng → Y có khả năng xảy ra cao hơn (Dựa theo tình hình thời tiết->Dự đoán khác có thể mua hoặc không)
+=================
+Phân tích tương quan:
+  正の相関: X tăng → Y tăng (Thời tiết đẹp -> Doanh số cà phê tăng)
+  負の相関: X tăng → Y giảm (Thời tiết đẹp -> Doanh số trà tăng)
+  相関なし: Không có liên hệ (Thời tiết đẹp -> Không ảnh hưởng đến doanh số bánh mì)
+Phân tích chủ thành phần:
+  主成分分析 (Principal Component Analysis - PCA): Phân tích thành phần chính
+  → Dựa vào dữ liệu tổng thể để tìm ra các yếu tố chính
+  Vd có các môn lý,hóa,văn,sử,địa... -> Chia ra thành 2 nhóm là 文系科目 và 理系科目. 
+
 
