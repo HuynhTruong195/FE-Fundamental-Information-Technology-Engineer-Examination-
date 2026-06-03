@@ -3612,7 +3612,6 @@ Ký hiệu:
   A　∧　B
   Mẹo nhớ:
 “Cùng là 1 thì 1, còn lại là 0”
-
 Ví dụ:
   1∧1=1
   1∧0=0
@@ -3628,3 +3627,93 @@ Ví dụ:
   1⊕0=1
 
   CÂU NHỚ: AND lấy/tắt OR bật XOR đảo
+
+
+  +++++++++++++++++++++++++++++++++++++++++
+  +++++++++++++++++++++++++++++++++++++++++
+🔥🔥ハフマン (Huffman) là ハフマン符号化 (Huffman Coding) — một phương pháp nén dữ liệu không mất mát (可逆圧縮) rất hay xuất hiện trong FE.
+
+Thay vì mỗi ký tự dùng 8 bit, Huffman tạo mã như:
+  Ký tự	Mã
+  A	0
+  B	10
+  C	110
+  D	111
+
+👍Cách tạo cây Huffman
+ - Bước 1
+  Sắp xếp theo tần suất tăng dần
+  D : 10
+  C : 20
+  B : 30
+  A : 40
+ - Bước 2
+  Ghép 2 nút nhỏ nhất 
+Còn:
+  30
+  30
+  40
+- Ghép tiếp 2 nút nhỏ nhất
+  Còn:
+  60
+  40
+- Ghép tiếp 2 nút nhỏ nhất
+  Còn:
+  100 Hoàn thành cây.
+
+
+👍Gán bit
+  Thông thường:
+  trái = 0
+  phải = 1
+
+           100
+        /   \
+     A40     60
+            /  \
+          B30   30
+               /  \
+            D10   C20
+
+VÍ DỤ VỀ TÍNH ĐỘ DÀI MÃ 
+  Ví dụ:
+
+  A:40
+  B:30
+  C:20
+  D:10
+
+  Mã:
+
+  A = 1 bit
+  B = 2 bit
+  C = 3 bit
+  D = 3 bit
+
+  Tổng số bit cần dùng:
+  A: 40*1 = 40 bit
+  B: 30*2 = 60 bit
+  C: 20*3 = 60 bit
+  D: 10*3 = 30 bit
+  Tổng = 40 + 60 + 60 + 30 = 190 bit
+
+
+  +++++++++++++++++++++++++++++++++++++++++
+  +++++++++++++++++++++++++++++++++++++++++
+
+🔥🔥逆ポーランド記法 (Reverse Polish Notation - RPN)
+Nó là cách viết biểu thức không cần dấu ngoặc.
+VD: 
+  A + B * C
+  Viết RPN: A B C * +
+Có ngoặc:
+  A + (B * C)
+  RPN: A B C * +
+
+🔥Cách tính nhanh bằng Stack
+VD: 
+3 4 + 5 ×
+-> (3+4)×5 = 35
+
+(A+B)*(C-D)
+-> A B + C D - ×
