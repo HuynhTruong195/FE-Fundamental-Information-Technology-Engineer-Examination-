@@ -3615,6 +3615,7 @@ Ký hiệu:
 Ví dụ:
   1∧1=1
   1∧0=0
+  0∧0=0
 
 2. 排他的論理和 (XOR)　　ビット反転
 Ký hiệu:
@@ -3717,3 +3718,36 @@ VD:
 
 (A+B)*(C-D)
 -> A B + C D - ×
+
+
+++++++++++++++++++++++++++++++++++++++++++
+Dạng bài BNF
+BNF (Backus-Naur Form) là một cách để mô tả cú pháp của ngôn ngữ lập trình hoặc cấu trúc dữ liệu.
+Ví dụ:
+<expression> ::= <term> | <expression> "+" <term> </term>
+
+  bài tập ví dụ:
+  <数字> ::= 0|1|2|3|4|5|6|7|8|9
+  <英字> ::= A|B|C|D|E|F
+  <英数字> ::= <英字> | <数字> | _
+  <変数名> ::= <英字> | <変数名><英数字> 
+  Tìm <変数名>
+  A. _B39  B. 246  C. 3E5  D. F5_1
+  Nhìn nhanh thấy <変数名> ::= <英字> bắt buộc bắt đầu bằng chữ cái, nên đáp án là D.
+
+  +++++++++++++++++++++++++++++++++++++++++
+  Dạng bài tính Video Memory (VRAM)
+  VD:
+   Đề cho:
+Độ phân giải: 1000 × 800 dots
+Số màu: 65,536 màu (2^16 màu)
+Hỏi: cần tối thiểu bao nhiêu MB
+ 
+画像サイズ＝　（ドット数）ｘ　（色の表現に必要なビット数）
+　　　　　　　  1000×800　×　16ビット ÷ 8 (vì đổi sang byte)
+  　　　　　　　  = 1000 × 800 × 16 ÷ 8
+    　　　　　　　  = 1000 × 800 × 2
+    　　　　　　　  = 1,600,000 byte
+      　　　　　　　  = 1.6 MB
+
+ NHỚ:  Dung lượng ảnh = Số pixel×Bit màu sau đó ÷8 để đổi sang byte
