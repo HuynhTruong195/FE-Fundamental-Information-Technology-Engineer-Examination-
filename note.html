@@ -3794,3 +3794,57 @@ Clock = 580MHz
 MIPS = (Clock Speed) ÷ (平均CPI) × 10^6
      = (580,000,000) ÷ (2.9) × 10^6
      ≈ 200 MIPS
+
+==============================================
+#################################################################
+1️⃣CISC: Complex Instruction Set Computer
+- CISC là kiến trúc máy tính với tập lệnh phức tạp, cho phép thực hiện nhiều thao tác trong một lệnh duy nhất.
+- Ưu điểm: giảm số lượng lệnh cần thiết để thực hiện một tác vụ
+- Nhược điểm: có thể làm cho việc thiết kế và tối ưu hóa CPU trở nên phức tạp hơn.
+
+2️⃣RISC: Reduced Instruction Set Computer
+- RISC là kiến trúc máy tính với tập lệnh đơn giản, mỗi lệnh thực hiện một thao tác duy nhất.
+- Ưu điểm: dễ dàng tối ưu hóa và thiết kế CPU, thường có hiệu suất cao hơn trong các tác vụ đơn giản
+- Nhược điểm: có thể yêu cầu nhiều lệnh hơn để thực hiện một tác vụ
+
+🧠パイプラン方式　(Pipeline)
+- Pipeline là kỹ thuật trong thiết kế CPU cho phép thực hiện nhiều lệnh cùng một lúc bằng cách chia quá trình thực thi thành các giai đoạn.
+Không pipeline: 
+Lệnh 1: Fetch → Decode → Execute → Write Back
+Lệnh 2: Fetch → Decode → Execute → Write Back
+Có pipeline:
+Lệnh 1: Fetch → Decode → Execute → Write Back
+Lệnh 2:        Fetch → Decode → Execute → Write Back
+Lệnh 3:               Fetch → Decode → Execute → Write Back
+- Ưu điểm: tăng hiệu suất bằng cách cho phép nhiều lệnh được xử lý đồng thời
+- Nhược điểm: có thể gặp phải các vấn đề như hazard (xung đột) khi các lệnh phụ thuộc vào nhau.
+
+🧠Công thức FE thích hỏi
+VD: 4段パイプライン (4 stage pipeline) và 100 lệnh
+
+-Không pipeline
+  1 lệnh cần 4 clock
+  100×4=400
+
+-Có pipeline:
+    Công thức: Clock= Số stage + Số lệnh - 1
+              Clock = 4 + 100 - 1 = 103 clock
+
+🧠 Hiệu suất tăng bao nhiêu?
+Hiệu suất tăng = (Thời gian không pipeline) ÷ (Thời gian có pipeline)
+               = 400 ÷ 103
+               ≈ 3.88 lần
+    CÁCH NHÌN NHANH NẾU SỐ LỆNH LỚN THÌ HIỆU SUẤT XẤP XỈ BẰNG SỐ STAGE
+VD: 1000 lệnh và 4 stage pipeline THÌ HIỆU SUẤT TĂNG ≈ 4 lần K CẦN TÍNH.
+
+** Bẫy FE hay ra
+Bẫy 1: Hazard (ハザード)
+  vd:  ADD R1,R2,R3
+       SUB R4,R1,R5
+  SUB cần kết quả của ADD.
+⇒ phải chờ.
+⇒ pipeline bị dừng.
+
+Bẫy 2 : ĐỀ HỎI 理論上の性能向上
+THÌ CHỈ CẦN LẤY N LẦN SỐ STAGE
+VD: 4 stage pipeline thì hiệu suất tăng lý thuyết là 4 lần.
