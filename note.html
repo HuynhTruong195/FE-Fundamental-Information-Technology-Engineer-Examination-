@@ -3810,7 +3810,7 @@ MIPS = (Clock Speed) ÷ (平均CPI) × 10^6
 🧠パイプラン方式　(Pipeline)
 - Pipeline là kỹ thuật trong thiết kế CPU cho phép thực hiện nhiều lệnh cùng một lúc bằng cách chia quá trình thực thi thành các giai đoạn.
 Không pipeline: 
-Lệnh 1: Fetch → Decode → Execute → Write Back
+Lệnh 1: Fetch → Decode → Execute → Write Back 
 Lệnh 2: Fetch → Decode → Execute → Write Back
 Có pipeline:
 Lệnh 1: Fetch → Decode → Execute → Write Back
@@ -3825,13 +3825,13 @@ VD: 4段パイプライン (4 stage pipeline) và 100 lệnh
 -Không pipeline
   1 lệnh cần 4 clock
   100×4=400
-
+  
 -Có pipeline:
     Công thức: Clock= Số stage + Số lệnh - 1
               Clock = 4 + 100 - 1 = 103 clock
 
 🧠 Hiệu suất tăng bao nhiêu?
-Hiệu suất tăng = (Thời gian không pipeline) ÷ (Thời gian có pipeline)
+Hiệu suất tăng = (Thời gian không pipeline) ÷ (Thời gian có pipeline) 
                = 400 ÷ 103
                ≈ 3.88 lần
     CÁCH NHÌN NHANH NẾU SỐ LỆNH LỚN THÌ HIỆU SUẤT XẤP XỈ BẰNG SỐ STAGE
@@ -3848,3 +3848,26 @@ Bẫy 1: Hazard (ハザード)
 Bẫy 2 : ĐỀ HỎI 理論上の性能向上
 THÌ CHỈ CẦN LẤY N LẦN SỐ STAGE
 VD: 4 stage pipeline thì hiệu suất tăng lý thuyết là 4 lần.
+
+🧠🧠🧠🧠🧠🧠🧠🧠
+CÁCH BỘ NHỚ CACHE ĐỌC VÀ GHI DỮ LIỆU
+1️⃣ Đọc dữ liệu từ cache
+- CPU kiểm tra cache trước khi truy cập bộ nhớ chính.
+- Nếu dữ liệu có trong cache (cache hit), CPU sẽ đọc từ cache, nhanh hơn.
+- Nếu dữ liệu không có trong cache (cache miss), CPU sẽ phải đọc từ bộ nhớ chính, chậm hơn.
+- Hitrate (ヒット率) : Tỷ lệ data có trong bộ nhớ cahce.
+  vd: CPU đọc data A từ bộ nhớ chính thì sẽ gửi cả vào register và cache. Lần sau nếu CPU cần data A thì sẽ đọc từ cache cho nhanh.
+   Tuy nhiên do dung lượng cache nhỏ nên trường hợp nếu không có Data thì bắt buộc phải đọc thêm từ bộ nhớ chính.
+   Tính toán khoảng thời gian lấy data từ 2 nơi đó gọi là 実行アクセス時間(Effective Access Time - EAT)
+  🧠CÔNG THỨC: EAT = C x hitrate + M x (1-hitrate)    
+              C: thời gian truy cập cache, M: thời gian truy cập bộ nhớ chính
+
+  2️⃣ Ghi dữ liệu vào cache
+- Khi CPU ghi dữ liệu vào cache, có hai phương pháp chính:
+  - Write-through: Dữ liệu được ghi đồng thời vào cache và bộ nhớ chính, đảm bảo tính nhất quán nhưng có thể chậm hơn.
+  - Write-back: Dữ liệu chỉ được ghi vào cache và sẽ được ghi vào bộ nhớ chính sau khi dữ liệu trong cache bị thay thế, nhanh hơn nhưng có thể gây ra mất dữ liệu nếu có sự cố trước khi dữ liệu được ghi vào bộ nhớ chính.
+
+  3️⃣ Cách tổ chức cache
+- Cache được tổ chức thành các khối (blocks) hoặc dòng (lines), mỗi khối chứa một phần dữ liệu từ bộ nhớ chính.
+- Khi có cache miss, một khối dữ liệu sẽ được tải từ bộ nhớ chính vào cache, và nếu cache đã đầy, một khối dữ liệu cũ sẽ bị thay thế theo một chính sách nhất định (ví dụ: LRU - Least Recently Used).
+
