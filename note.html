@@ -3871,3 +3871,14 @@ CÁCH BỘ NHỚ CACHE ĐỌC VÀ GHI DỮ LIỆU
 - Cache được tổ chức thành các khối (blocks) hoặc dòng (lines), mỗi khối chứa một phần dữ liệu từ bộ nhớ chính.
 - Khi có cache miss, một khối dữ liệu sẽ được tải từ bộ nhớ chính vào cache, và nếu cache đã đầy, một khối dữ liệu cũ sẽ bị thay thế theo một chính sách nhất định (ví dụ: LRU - Least Recently Used).
 
+================================================
+
+QUẢN LÝ DỮ LIỆU ĐỐI VỚI HDD
+- Dữ liệu khi thêm sửa xóa trên HDD sẽ được lưu trữ trong các sector, track và platter.
+- khi xóa dữ liệu sẽ gây ra hiện tượng phân mảnh フラグメンテーション (fragmentation), làm giảm hiệu suất truy cập dữ liệu.
+- Khi đó cần thực hiện chống phân mảnh デフラグメンテーション (defragmentation) để sắp xếp lại dữ liệu liên tục trên đĩa, cải thiện hiệu suất truy cập.
+
+NÂNG CAO HIỆU NĂNG HDD
+--> Xem RAIO bên trên <--
+
+
