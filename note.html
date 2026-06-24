@@ -1213,12 +1213,13 @@ multitask(マルチタスク): chạy nhiều task cùng lúc
   🧠 2. ページフォールト (Page Fault): cơ chế ngắt phát sinh Khi truy cập trang không có trong bộ nhớ chính.
   🧠 3. ページアウト (Page Out): chuyển trang từ bộ nhớ chính sang bộ nhớ phụ
 
- 🔥 3 thuật toán thay thế trang
-  🧠 1. FIFO (First In First Out): thay thế trang vào bộ nhớ lâu nhất
-  🧠 2. LRU (Least Recently Used): thay thế trang lâu không sử dụng nhất
-  🧠 3. LFU (Least Frequently Used): thay thế trang ít được sử dụng nhất
+  🔥  スワッピング　・　 スラッシング (Thrashing): Hiện tượng máy tính luôn phải chuyển đổi từ bộ nhớ thực sang bộ nhớ ảo
 
-  🔥  スラッシング (Thrashing): Hiện tượng máy tính luôn phải chuyển đổi từ bộ nhớ thực sang bộ nhớ ảo
+ 🔥 3 thuật toán thay thế trang
+  🧠 1. FIFO (First In First Out): thay thế trang vào bộ nhớ đầu tiên
+  🧠 2. LIFO (Last In First Out): thay thế trang ra bộ nhớ cuối cùng
+  🧠 3. LRU (Least Recently Used): thay thế trang không đc sử dụng lâu nhất
+  🧠 4. LFU (Least Frequently Used): thay thế trang ít được sử dụng nhất
 
   ➡️ Giải pháp: tăng dung lượng bộ nhớ chính hoặc tối ưu hóa thuật toán thay thế trang.
 
@@ -3873,10 +3874,13 @@ CÁCH BỘ NHỚ CACHE ĐỌC VÀ GHI DỮ LIỆU
 
 ================================================
 
-QUẢN LÝ DỮ LIỆU ĐỐI VỚI HDD
+-->QUẢN LÝ DỮ LIỆU ĐỐI VỚI HDD
 - Dữ liệu khi thêm sửa xóa trên HDD sẽ được lưu trữ trong các sector, track và platter.
 - khi xóa dữ liệu sẽ gây ra hiện tượng phân mảnh フラグメンテーション (fragmentation), làm giảm hiệu suất truy cập dữ liệu.
 - Khi đó cần thực hiện chống phân mảnh デフラグメンテーション (defragmentation) để sắp xếp lại dữ liệu liên tục trên đĩa, cải thiện hiệu suất truy cập.
+
+-->QUẢN LÝ DỮ LIỆU ĐỐI VỚI RAM
+ - Chống phân mảnh bằng memory compaction (メモリ圧縮) để sắp xếp lại các khối bộ nhớ trống, giúp tối ưu hóa việc sử dụng RAM.
 
 NÂNG CAO HIỆU NĂNG HDD
 --> Xem RAIO bên trên <--
@@ -3888,3 +3892,37 @@ NÂNG CAO HIỆU NĂNG HDD
 vd: Windows, Linux, macOS, IOS, Android...
 CÁC CÂU HỎI HAY RA XOAY QUANH QUẢN LÝ JOB/TASK, QUẢN LÝ BỘ NHỚ VÀ QUẢN LÝ FILE.
 🔥🔥🔥XEM LẠI Ở PHẦN NOTE BÊN TRÊN🔥🔥🔥 
+
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+重要なディレクトリ名: các thư mục quan trọng trong hệ điều hành
+- カレントディレクトリ (Current Directory): Thư mục hiện tại, nơi người dùng đang làm việc.
+- ルートディレクトリ (Root Directory): Thư mục gốc
+- ホームディレクトリ (Home Directory): Thư mục cá nhân của người dùng, nơi lưu trữ các tệp và cài đặt cá nhân.
+- 親ディレクトリ (Parent Directory): Thư mục cha, là thư mục chứa thư mục hiện tại.
+- サブディレクトリ (Subdirectory): Thư mục con, là thư mục nằm bên trong một thư mục khác.
+　-->
+CÂU HỎI LIÊN QUAN TỚI TRUY CẬP FILE
+Các ký tự để truy cập file trong hệ điều hành:
+- dấu chấm (.) : đại diện cho thư mục hiện tại.
+- dấu hai chấm (..) : đại diện cho thư mục cha.
+- dấu gạch chéo (/) hoặc ￥  phân tách các thư mục trong đường dẫn.
+
+Vd: ルートディレクトリ　
+      ├─ 旅行写真
+      │   ├─ 国内旅行
+      │   │   ├─ 東京ー写真1.png
+      │   │   └─ 京都
+      │   └─ 海外旅行
+      │       ├─ 北海道
+      │       └─ 沖縄
+ 
+--> ￥旅行写真￥国内旅行￥東京￥写真1
+
+--> truy cập nhanh qua thư mục Cha
+  .国内旅行/東京/写真1
+--> truy cập nhanh qua thư mục hiện tại
+  ..旅行写真/国内旅行/東京/写真1
+
+-->Trường hợp đang ở mục 海外旅行 muốn truy cập tới 写真1.png
+  .￥..￥国内旅行￥東京￥写真1
+
