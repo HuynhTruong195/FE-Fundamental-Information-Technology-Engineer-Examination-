@@ -1219,7 +1219,7 @@ multitask(マルチタスク): chạy nhiều task cùng lúc
   🧠 1. FIFO (First In First Out): thay thế trang vào bộ nhớ đầu tiên
   🧠 2. LIFO (Last In First Out): thay thế trang ra bộ nhớ cuối cùng
   🧠 3. LRU (Least Recently Used): thay thế trang không đc sử dụng lâu nhất
-  🧠 4. LFU (Least Frequently Used): thay thế trang ít được sử dụng nhất
+  🧠 4. LFU (Least Frequently Used): thay thế trang số lần sử dụng ít nhất
 
   ➡️ Giải pháp: tăng dung lượng bộ nhớ chính hoặc tối ưu hóa thuật toán thay thế trang.
 
@@ -1780,10 +1780,10 @@ DBMS (Database Management System)
 DBMS là phần mềm trung gian giữa người dùng / ứng dụng và dữ liệu
 
 2️⃣ DBMS làm những việc gì? (rất hay ra đề)
-🔹 1. Quản lý dữ liệu
+🔹 1. Quản lý dữ liệu 
 
 Thêm / sửa / xóa / tìm kiếm
-
+ 
 Lưu dữ liệu xuống disk
 
 🔹 2. Quản lý transaction（トランザクション管理）
@@ -3885,6 +3885,10 @@ CÁCH BỘ NHỚ CACHE ĐỌC VÀ GHI DỮ LIỆU
 NÂNG CAO HIỆU NĂNG HDD
 --> Xem RAIO bên trên <--
 
+  🧠THUẬT NGỮ RA THI FE
+ホットプラグ (Hot Plug) là khả năng thay thế hoặc thêm thiết bị phần cứng mà không cần tắt nguồn máy tính.　VD: cắm chuột, bàn phím, USB, ổ cứng ngoài..
+プラグ・アンド・プレイ (Plug and Play) sau khi cắm chuột, bàn phím thì máy tính tự động nhận diện thiết bị
+
 
  🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
  OS（Operating System）オペレーティングシステム
@@ -3900,7 +3904,8 @@ CÁC CÂU HỎI HAY RA XOAY QUANH QUẢN LÝ JOB/TASK, QUẢN LÝ BỘ NHỚ VÀ
 - ホームディレクトリ (Home Directory): Thư mục cá nhân của người dùng, nơi lưu trữ các tệp và cài đặt cá nhân.
 - 親ディレクトリ (Parent Directory): Thư mục cha, là thư mục chứa thư mục hiện tại.
 - サブディレクトリ (Subdirectory): Thư mục con, là thư mục nằm bên trong một thư mục khác.
-　-->
+
+🔥🔥　-->
 CÂU HỎI LIÊN QUAN TỚI TRUY CẬP FILE
 Các ký tự để truy cập file trong hệ điều hành:
 - dấu chấm (.) : đại diện cho thư mục hiện tại.
@@ -3919,10 +3924,13 @@ Vd: ルートディレクトリ　
 --> ￥旅行写真￥国内旅行￥東京￥写真1
 
 --> truy cập nhanh qua thư mục Cha
-  .国内旅行/東京/写真1
---> truy cập nhanh qua thư mục hiện tại
-  ..旅行写真/国内旅行/東京/写真1
+  ./国内旅行/東京/写真1
 
 -->Trường hợp đang ở mục 海外旅行 muốn truy cập tới 写真1.png
   .￥..￥国内旅行￥東京￥写真1
 
+
+    🧠THUẬT NGỮ PHẦN DBMS
+  表、テーブル (Table): Bảng dữ liệu, nơi lưu trữ thông tin theo hàng và cột.
+  行、レコード、組、タプル　（Row/Record）: Hàng dữ liệu, mỗi hàng đại diện
+  列、フィールド、属性、カラム (Column/Field): Cột dữ liệu, mỗi cột đại diện cho một thuộc tính của dữ liệu.
