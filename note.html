@@ -1260,7 +1260,7 @@ Hôm nay backup → copy tất cả file A, B, C
 
 📌 Đặc điểm
 Dung lượng tăng dần theo thời gian
-Khôi phục cần:
+Khôi phục cần: 
 1 Full + 1 Differential
 
 📌 Ví dụ
@@ -3940,4 +3940,22 @@ Vd: ルートディレクトリ　
   THIẾT KẾ DATABASE 3 LỚP SCHEMA
   1️⃣ 外部スキーマ (External Schema): Cấu trúc dữ liệu bên ngoài, định nghĩa cách người dùng hoặc ứng dụng nhìn thấy dữ liệu.
   2️⃣ 論理スキーマ (Logical Schema): Cấu trúc dữ liệu logic, định nghĩa các bảng, quan hệ và ràng buộc trong cơ sở dữ liệu.
-  3️⃣ 内部スキーマ (Internal Schema): Cấu trúc dữ liệu bên trong, định nghĩa cách dữ liệu được lưu trữ và truy xuất trong hệ thống quản lý cơ sở dữ liệu.
+  3️⃣ 内部スキーマ (Internal Schema): Cấu trúc dữ liệu bên trong, định nghĩa cách dữ liệu được lưu trữ và truy xuất trong hệ thống quản lý cơ sở dữ liệu. 
+
+
+  ==============================================
+
+  🧠STORE PROCEDURE (ストアドプロシージャ) : là một tập hợp các câu lệnh SQL được lưu trữ trong cơ sở dữ liệu và có thể được gọi để thực hiện một nhiệm vụ cụ thể.
+  để giảm thiểu tốc tộc xử lý và truy cập mạng thì dùng store procedure ở giữa server và client. Client chỉ cần gọi store procedure mà không cần gửi nhiều câu lệnh SQL.
+
+  ==============================================
+
+   🧠BACK UP
+  🔹Rollback (ロールバック): Khi xảy ra lỗi trong quá trình giao dịch thi Khôi phục trạng thái trước khi thực hiện một giao dịch　(更新前ジャーナル)
+  🔹Rollforwork （ロールフォワード）: Sau khi gd xong data lại lỗi data thì khôi phục lại trạng thái sau khi đã thực hiện gd xong(更新後ジャーナル)
+  🔹Commit (コミット): Khi giao dịch thành công thì xác nhận và lưu các thay đổi vào cơ sở dữ liệu.
+  🔹2相コミット: Hỏi các bên csdl có muốn tham gia vào một giao dịch đồng ý commit hoặc rollback, nếu có 1 bên trả lời 不可能 thì rollback.
+-->分散テータベースシステム：
+  - Khi có nhiều cơ sở dữ liệu phân tán, 2相コミット (Two-Phase Commit) là một giao thức đảm bảo rằng tất cả các cơ sở dữ liệu tham gia vào một giao dịch
+   đều đồng ý commit hoặc rollback, để duy trì tính nhất quán của dữ liệu. 
+
