@@ -1960,7 +1960,7 @@ Thấy MB → đổi sang bit
 
   2️⃣. パケット交換方式 (Packet Switching) Phương thức chuyển mạch gói
 👉 Dữ liệu được chia thành các gói nhỏ, gửi qua mạng và ghép lại tại đích
-🔹 Ưu điểm
+🔹 Ưu điểm 
 ✔ Hiệu quả sử dụng băng thông
 ✔ Linh hoạt với nhiều người dùng
 🔹 Nhược điểm
@@ -2092,7 +2092,7 @@ Subnet mask: 255.255.255.0
   🧠 4. NAT (Network Address Translation) vd 3 cái nhà 3 địa chỉ nhưng quản lý chỉ biết nhà đó là 1
 👉 Kỹ thuật chuyển đổi 1 IP riêng thành IP toàn cầu 
   🧠 5. NAPT (Network Address Port Translation)
-👉 Kỹ thuật chuyển đổi nhiều thiết bị có IP riêng kết nối internet bằng một IP toàn cầu duy nhất.
+👉 Kỹ thuật chuyển đổi nhiều máy IP riêng kết nối internet bằng 1 IP toàn cầu duy nhất.
   🧠6. DHCP (Dynamic Host Configuration Protocol)
 👉 Giao thức cấp phát địa chỉ IP tự động cho thiết bị trong mạng.
 
@@ -2122,22 +2122,24 @@ Subnet mask: 255.255.255.0
 🔹 OSI = 7 tầng (mô hình lý thuyết)
   Tầng	Nhớ gì
   L7	Ứng dụng (HTTP)
-  L6	Mã hóa / nén
-  L5	Quản lý phiên
-  L4	TCP / UDP
-  L3	IP, Router
-  L2	MAC, Switch
-  L1	Tín hiệu điện
+  L6	Mã hóa / nén (Presentation SSL / TLS - hình thức hiển thị dữ liệu)
+  L5	Quản lý phiên (session)
+  L4	TCP / UDP (Transport - Đảm bảo tính tin cậy khi truyền dữ liệu)
+  L3	IP, Router (Network - Định tuyến giữa các mạng)
+  L2	MAC, Switch (Data Link - Truyền dữ liệu giữa các thiết bị trong cùng một mạng)
+  L1	Tín hiệu điện (Physical - Tầng vật lý)
 
   🔹 TCP/IP = 4 tầng (thực tế)
   Tầng	Giao thức
-  L7	  HTTP
-  L4	  TCP / UDP
-  L3	  IP  
-  L2	  MAC
+  L4-7	  Application (HTTP, FTP, SMTP)
+  L3    Transport (TCP / UDP)
+  L2	  Internet Protocol (IP)   
+  L1	 MAC (PPPoE, Switch, Hub)
 
   🧠 Chốt 1 câu
 OSI là mô hình 7 tầng để học, TCP/IP là mô hình 4 tầng dùng thực tế.
+
+NHỚ HÌNH MINH HỌA TRUYỀN DATA GIỮA 2 NGƯỜI GỬI TỪ TÂNG 7 XUỐNG 1, NGƯỜI NHẬN TỪ TÂNG 1 NGƯỢC VỀ 7
 
 🔥🔥🔥🔥4つのネットワーク機器(4 THIẾT BỊ MẠNG)🔥🔥🔥🔥🔥
 
@@ -3959,3 +3961,41 @@ Vd: ルートディレクトリ　
   - Khi có nhiều cơ sở dữ liệu phân tán, 2相コミット (Two-Phase Commit) là một giao thức đảm bảo rằng tất cả các cơ sở dữ liệu tham gia vào một giao dịch
    đều đồng ý commit hoặc rollback, để duy trì tính nhất quán của dữ liệu. 
 
+
+   ==============================================
+   🧠CÂU HỎI VỀ TCP/UDP 
+   Trong tâng Protocol thì TCP được sử dụng khi muốn tăng độ tin cậy, (信頼性)
+   còn UDP được sử dụng khi muốn tăng tốc độ truyền dữ liệu. (リアルタイム)
+
+   ==============================================
+   🧠CÂU HỎI VỀ TÍNH IP VÀ SUBNET MARK
+   - Viết địa chỉ IP và subnet mask dưới dạng nhị phân 32 bit.
+   - Phần network là phần có bit 1 trong subnet mask, phần host là phần có bit 0 trong subnet mask.
+   -Kết hợp bằng AND 
+   - Dựa vào đáp án trong đề chuyển dạng nhị phân 8 bit ở các địa chỉ cuối so sánh với subnet mask để xác định network và host.
+   - Phần host là phần nằm sau số 1 cuối cùng trong subnet mask. 
+   VD 1111 1111 1110 0000
+   thì phần host là 5 bit 0 cuối cùng, phần network là 11 bit đầu tiên.
+   Cách tính: 2^n - 2 (n là số bit host) để tính số host có thể sử dụng trong mạng.
+   => 2^5 - 2 = 30 host có thể sử dụng trong mạng.
+
+
+   ==============================================
+   🧠CÁC LƯU Ý DỄ NHẦM LẪN
+    1️⃣ Applicaiton Protocol (AP) là giao thức ứng dụng, nằm ở tầng ứng dụng của mô hình OSI. Nó định nghĩa cách các ứng dụng giao tiếp với nhau qua mạng.
+    VD:
+    HTTP dùng cho web, SMTP cho email, FTP cho truyền tệp tin. port 80, 25, 21 tương ứng.
+    FTP  ( File Transfer Protocol) dùng để truyền tệp tin. port 21
+    NTP (Network Time Protocol) dùng để đồng bộ hóa thời gian giữa các máy tính trong mạng. port 123
+    SMTP (Simple Mail Transfer Protocol) dùng để gửi email. port 25
+    POP3 (Post Office Protocol version 3) dùng để nhận email từ máy chủ. port 110
+    IMAP (Internet Message Access Protocol) dùng để truy cập email từ máy chủ. port 143
+    MIME (Multipurpose Internet Mail Extensions) là một tiêu chuẩn mở rộng cho email, cho phép gửi các loại tệp tin khác nhau như hình ảnh, âm thanh, video. port 25
+    S/MINE (Secure/Multipurpose Internet Mail Extensions) là một tiêu chuẩn mở rộng cho email, cung cấp bảo mật cho email bằng cách mã hóa và xác thực. port 25
+
+  ==============================================
+   🧠CÁC THUẬT NGỮ QUAN TRỌNG TRONG NETWORK
+    1️⃣ SDN (Software-Defined Networking) là một kiến trúc mạng cho phép quản lý và điều khiển mạng thông qua phần mềm, tách biệt việc điều khiển mạng khỏi phần cứng. 
+      + OPENFLOW là một giao thức trong SDN, cho phép các thiết bị mạng giao tiếp với bộ điều khiển trung tâm để quản lý luồng dữ liệu.
+    2️⃣ IPsec (Internet Protocol Security) là một bộ giao thức bảo mật cho các kết nối mạng IP, cung cấp xác thực và mã hóa dữ liệu.
+    3️⃣ CGI (Common Gateway Interface) là một tiêu chuẩn cho phép các máy chủ web chạy các chương trình bên ngoài để tạo nội dung động.
