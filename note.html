@@ -2146,7 +2146,7 @@ NHỚ HÌNH MINH HỌA TRUYỀN DATA GIỮA 2 NGƯỜI GỬI TỪ TÂNG 7 XUỐN
   🧠 1. リピータ (Repeater) layer 1 , hoạt đồng tầng vật lý
 👉 Thiết bị khuếch đại tín hiệu mạng để mở rộng phạm vi truyền tín hiệu trong mạng LAN.
   🧠 2. ブリッジ (Bridge) layer 2 , liên kết dữ liệu
-👉 Thiết bị kết nối truyền dữ liệu giữa hai mạng LAN với nhau, chỉ chuyển khi cần.
+👉 Thiết bị kết nối truyền dữ liệu giữa hai mạng LAN với nhau, chỉ chuyển khi cần. 
   🧠 3. ルーター (Router) Layer 3 , hoặt động tầng mạng
 👉 Thiết bị định tuyến, chuyển tiếp dữ liệu giữa các mạng khác nhau dựa trên địa chỉ IP.
   🧠 4. ゲートウェイ(Gateway) Layer 4-7
@@ -2169,6 +2169,7 @@ NHỚ HÌNH MINH HỌA TRUYỀN DATA GIỮA 2 NGƯỜI GỬI TỪ TÂNG 7 XUỐN
 + マルウェア (Malware): Phần mềm độc hại như virus, worm
 + セキュリティホール (Lỗ hổng bảo mật): Lỗi trong phần mềm hoặc hệ thống.
 + ブルートフォース攻撃 (Brute Force Attack): Tấn công bằng cách thử tất cả các kết hợp mật khẩu.
++ リバース　ブルートフォース攻撃 (Reverse Brute Force Attack): Tấn công bằng cách thử tất cả các mật khẩu phổ biến trên một tài khoản cụ thể.
 + 辞書攻撃 (Dictionary Attack): Tấn công bằng cách sử dụng từ điển mật khẩu phổ biến.
 + パスワードリスト攻撃: Tấn công bằng cách sử dụng danh sách mật khẩu đã bị rò rỉ.
 + マルウェア (Malware): Phần mềm độc hại như virus, worm, trojan.
@@ -2178,6 +2179,7 @@ NHỚ HÌNH MINH HỌA TRUYỀN DATA GIỮA 2 NGƯỜI GỬI TỪ TÂNG 7 XUỐN
 + キーロガー (Keylogger): Phần mềm ghi lại các phím bấm của người dùng.
 + バックドアの悪用 (Backdoor Exploitation): Lợi dụng cửa hậu trong phần mềm để truy cập trái phép.
 + フィッシング (Phishing): Lừa đảo người dùng cung cấp thông tin nhạy cảm qua các trang giả mạo.
++ IP スプーフィング (IP Spoofing): Giả mạo địa chỉ IP để đánh lừa hệ thống.
 + ドライブバイダウンロード (Drive-by Download): Tải phần mềm độc hại khi truy cập trang web bị nhiễm.
 + SEOポイズニング (SEO Poisoning): Tấn công bằng cách tạo các trang web giả mạo xuất hiện cao trong kết quả tìm kiếm.
 + DNSキャッシュポイズニング (DNS Cache Poisoning): Tấn công làm giả mạo bản ghi DNS để chuyển hướng người dùng đến trang web giả mạo.
@@ -2186,8 +2188,14 @@ NHỚ HÌNH MINH HỌA TRUYỀN DATA GIỮA 2 NGƯỜI GỬI TỪ TÂNG 7 XUỐN
 + スパム (Spam): Gửi thư rác hoặc tin nhắn không mong muốn.
 + DoS攻撃 (Denial of Service Attack): Tấn công làm gián đoạn dịch vụ mạng.
 + ディレクトリトラバーサル攻撃 (Directory Traversal Attack): Tấn công truy cập trái phép vào các thư mục hệ thống.
++ トロイの木間 (Trojan Horse): Phần mềm giả mạo có lợi ích nhưng chứa mã độc hại.
++ ルートキット (Rootkit): Phần mềm ẩn để truy cập trái phép vào hệ thống.
 
-
+PHƯƠNG PHÁP PHÁT HIỆN VIRUS 
+  🧠 1. ビヘイビア法
+👉 Phát hiện dựa trên hành vi của phần mềm, nhận diện các hành vi đáng ngờ.
+  🧠 2. パターンマッチング法
+👉 Phát hiện dựa trên mẫu (pattern) của virus đã biết, so sánh với cơ sở dữ liệu mẫu virus.
 ===============================================================
 ################################################################
 🔥🔥🔥🔥暗号化技術の基本(KỸ THUẬT MÃ HÓA)🔥🔥🔥🔥🔥🔥
@@ -2271,7 +2279,7 @@ Thấy 計画書・手順・シナリオ → BCP
 
 ----------------------------------------------------------
 ISMS (情報セキュリティマネジメントシステム)
-	👉 Hệ thống quản lý an toàn thông tin của tổ chức
+	👉 Hệ thống quản lý an toàn thông tin của tổ chức 
 	→ bảo mật 機密性・完全性・可用性（CIA）
 
 ISMS適合性評価制度
@@ -2333,9 +2341,15 @@ Nhớ cụm này là làm bài rất nhanh:
 👉 Vùng mạng đệm giữa Internet và mạng nội bộ
 Đặt Web / Mail server để giảm rủi ro xâm nhập nội bộ
 
-🔒 SSL／TLS Secure Sockets Layer/Transport Layer Security
+🟦VPN Virtual Private Network
+👉 Mạng riêng ảo, tạo kết nối an toàn qua mạng công cộng (Internet)
+
+🟦 SSL／TLS Secure Sockets Layer/Transport Layer Security
 👉 Mã hóa通信 trên mạng
 TLS là phiên bản mới, an toàn hơn SSL
+
+🟦ペネトレーションテスト (Penetration Test)
+👉 Kiểm thử xâm nhập, mô phỏng tấn công để tìm lỗ hổng.
 
 🌐 HTTPS HyperText Transfer Protocol Secure
 👉 HTTP + SSL/TLS
@@ -3988,7 +4002,7 @@ Vd: ルートディレクトリ　
     FTP  ( File Transfer Protocol) dùng để truyền tệp tin. port 21
     NTP (Network Time Protocol) dùng để đồng bộ hóa thời gian giữa các máy tính trong mạng. port 123
     SMTP (Simple Mail Transfer Protocol) dùng để gửi email. port 25
-    POP3 (Post Office Protocol version 3) dùng để nhận email từ máy chủ. port 110
+    POP3 (Post Office Protocol version 3) dùng để nhận email từ máy chủ. port 110 
     IMAP (Internet Message Access Protocol) dùng để truy cập email từ máy chủ. port 143
     MIME (Multipurpose Internet Mail Extensions) là một tiêu chuẩn mở rộng cho email, cho phép gửi các loại tệp tin khác nhau như hình ảnh, âm thanh, video. port 25
     S/MINE (Secure/Multipurpose Internet Mail Extensions) là một tiêu chuẩn mở rộng cho email, cung cấp bảo mật cho email bằng cách mã hóa và xác thực. port 25
@@ -3998,4 +4012,17 @@ Vd: ルートディレクトリ　
     1️⃣ SDN (Software-Defined Networking) là một kiến trúc mạng cho phép quản lý và điều khiển mạng thông qua phần mềm, tách biệt việc điều khiển mạng khỏi phần cứng. 
       + OPENFLOW là một giao thức trong SDN, cho phép các thiết bị mạng giao tiếp với bộ điều khiển trung tâm để quản lý luồng dữ liệu.
     2️⃣ IPsec (Internet Protocol Security) là một bộ giao thức bảo mật cho các kết nối mạng IP, cung cấp xác thực và mã hóa dữ liệu.
-    3️⃣ CGI (Common Gateway Interface) là một tiêu chuẩn cho phép các máy chủ web chạy các chương trình bên ngoài để tạo nội dung động.
+    3️⃣ CGI (Common Gateway Interface) là một tiêu chuẩn cho phép các máy chủ web chạy các chương trình bên ngoài để tạo nội dung động.  
+
+
+  +++++++++++++++++++++++++++++++++++++++++++
+  =+++++++++++++++++++++++++++++++++++++++++++
+  NET WORK SECURITY
+  🔹プロキシサーバー (Proxy Server)
+  - Proxy Server là một máy chủ trung gian giữa người dùng và Internet, giúp cải thiện hiệu suất, bảo mật và kiểm soát truy cập.
+  🔹リバースプロキシ　(Reverse Proxy)
+  - Reverse Proxy là một máy chủ trung gian nhận các yêu cầu từ Internet và chuyển tiếp chúng đến các máy chủ nội bộ, giúp cân bằng tải và bảo vệ các máy chủ nội bộ.
+  🔹DMZ (Demilitarized Zone)
+  - DMZ là một khu vực mạng được tách biệt khỏi mạng nội bộ, 
+  thường được sử dụng để đặt các máy chủ công cộng như web server, email server, v.v., 
+  giúp bảo vệ mạng nội bộ khỏi các mối đe dọa từ bên ngoài.
