@@ -1089,11 +1089,11 @@ Scale-up: Nâng cấp phần cứng máy chủ hiện có để tăng hiệu nă
 =============================================================
 R-A-S-I-S（信頼性指標） chỉ số độ tin cậy
 🔥 R-A-S-I-S 指標（Reliability, Availability, Serviceability, Integrity, Scalability）
-1️⃣ R: Reliability（信頼性）
+1️⃣ R: Reliability（信頼性）　MTBFで評価
 Hệ thống hoạt động đúng chức năng trong thời gian dài mà không bị lỗi
-2️⃣ A: Availability（可用性）
+2️⃣ A: Availability（可用性）稼働率評価
 Hệ thống luôn sẵn sàng để sử dụng khi cần thiết
-3️⃣ S: Serviceability（保守性）
+3️⃣ S: Serviceability（保守性）MTTRで評価
 Dễ dàng bảo trì, sửa chữa và nâng cấp hệ thống
 4️⃣ I: Integrity（完全性）
 Dữ liệu và hệ thống không bị thay đổi hoặc hỏng hóc một cách trái phép
@@ -1109,7 +1109,7 @@ MTBF（平均故障間隔）: Thời gian trung bình giữa 2 lần lỗi
 → càng lớn càng tốt
 
 
-MTBR（平均修復時間）: Thời gian sửa chữa trung bình
+MTTR（平均修復時間）: Thời gian sửa chữa trung bình
 → càng nhỏ càng tốt
 
 
@@ -1119,7 +1119,7 @@ MTBR（平均修復時間）: Thời gian sửa chữa trung bình
 
 Công thức FE hay ra:
 
-可用性=  MTBF / (MTBF+MTTR)
+可用性（稼働率）=  MTBF / (MTBF+MTTR)
 	​
 
   ⚠️ Mẹo nhớ nhanh FE
@@ -2503,7 +2503,7 @@ Sơ đồ lớp (Class Diagram) クラス図
   + Ưu điểm: Dễ quản lý, rõ ràng.
   + Nhược điểm: Khó thay đổi yêu cầu sau khi bắt đầu.
 
-  🧠 2. Phát triển Agile(Agile Development)
+  🧠 2. Phát triển Agile アジャイル(Agile Development)
 👉 Phát triển linh hoạt, chia nhỏ dự án thành các phần nhỏ (sprint) và liên tục cải tiến.
   + Ưu điểm: Linh hoạt, thích ứng nhanh với thay đổi.
   + Nhược điểm: Khó quản lý, yêu cầu sự hợp tác cao.
@@ -2517,7 +2517,7 @@ Sơ đồ lớp (Class Diagram) クラス図
   Sprint Retrospective: Cuộc họp sau Sprint Review để đánh giá quy trình làm việc và cải thiện cho sprint tiếp theo.
 
 
-🧠 Reverse Engineering 
+🧠 Reverse Engineering （リバースエンジニアリング）
   👉 Kỹ thuật phân tích và tái tạo lại mã nguồn hoặc thiết kế của phần mềm từ sản phẩm đã hoàn thiện.
 🧠 Forward Engineering (フォワードエンジニアリング)
   👉  quá trình thông thường của việc tạo phần mềm từ các tài liệu thiết kế.
@@ -2529,14 +2529,15 @@ Sơ đồ lớp (Class Diagram) クラス図
   
   + XPの19のプラクティス
     1. 共同作業 (Pair Programming): Hai lập trình viên làm việc cùng nhau trên một máy tính.
-    2. 開発環境の整備 (Continuous Integration): Liên tục tích hợp mã nguồn để phát hiện lỗi sớm.
-    3. 管理者: Quản lý dự án chặt chẽ, theo dõi tiến độ.
-    4. 顧客: Khách hàng tham gia vào quá trình phát triển.
+    2. リファクタリング (Refactoring): Cải tiến mã nguồn mà không thay đổi chức năng bên ngoài.
+    3. テスト駆動開発 (Test-Driven Development): Viết kiểm thử trước khi viết mã nguồn.
+    4. 開発環境の整備 (Continuous Integration): Liên tục tích hợp mã nguồn để phát hiện lỗi sớm.
+    5. 管理者: Quản lý dự án chặt chẽ, theo dõi tiến độ.
+    6. 顧客: Khách hàng tham gia vào quá trình phát triển.
 
-🧠 ペアプログラミング (Pair Programming)
-  👉 Hai lập trình viên làm việc cùng nhau trên một máy tính để tăng chất lượng mã nguồn và giảm lỗi. 1 ng code 1 ng check
-🧠 リファクタリング (Refactoring)
-  👉 Quá trình cải tiến mã nguồn mà không thay đổi chức năng bên ngoài, nhằm nâng cao chất lượng và khả năng bảo trì.
+プロトタイピングモデル
+  🧠 プロトタイピングモデル (Prototyping Model)
+  👉 Phát triển phần mềm bằng cách tạo ra các nguyên mẫu (prototype) để thu thập phản hồi từ người dùng và cải thiện thiết kế trước khi phát triển sản phẩm cuối cùng.
 
 ===============================================================
  🔥🔥 QUẢN LTYS CẤU HÌNH PHẦN MỀM (SCM - SOFTWARE CONFIGURATION MANAGEMENT)
