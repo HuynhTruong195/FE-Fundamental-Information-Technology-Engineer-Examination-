@@ -661,7 +661,7 @@ O(n²) : Bình phương
 
 🔥🔥🔥🔥QUY TRÌNH XỬ LÝ CỦA CPU🔥🔥🔥🔥🔥🔥🔥🔥
 
-🔥 CPUの処理手順（FE頻出）
+🔥 CPUの処理手順（FE頻出）マイニング
 🧠 Quy trình cơ bản của CPU
 👉 フェッチ → デコード → 実行
 1️⃣ フェッチ（Fetch）– Lấy lệnh
@@ -2454,48 +2454,80 @@ Sơ đồ lớp (Class Diagram) クラス図
 ===============================================================
 ################################################################
 🔥🔥🔥🔥KIỂM THỬ 🔥🔥🔥🔥🔥🔥🔥🔥
-  🧠 1. Kiểm thử hộp trắng 
-👉 kết hợp giữa dữ liệu đầu vào và kết quả mong đợi khi kiểm thử phần mềm bằng cách phân tích cấu trúc bên trong của chương trình. 
-  +Test case : hợp giữa dữ liệu đầu vào và kết quả mong đợi khi kiểm thử phần mềm.
-  CÁCH ĐỌC FLOW CHART
-  1. Hình chữ nhật: biểu diễn một bước xử lý.
-  2. Hình thoi: biểu diễn một điểm quyết định (if-else).
-  3. Mũi tên: biểu diễn luồng điều khiển giữa các bước.
-  4. Hình tròn: kết nối các phần khác nhau của sơ đồ, đặc biệt khi sơ đồ quá phức tạp.
-  5. Hình chữ nhật bo góc:  Biểu thị điểm bắt đầu và kết thúc của một quy trình hoặc chương trình.
+  🧠 単体テスト – Kiểm thử đơn vị
 
-  🧠 2. Bao phủ lệnh（命令網羅） (Statement Coverage)
-👉  Mỗi câu lệnh thực thi ít nhất 1 lần không xét điều kiện, Múc độ bao phủ thấp nhất.
+Có 2 cách nhìn chính:
 
-  🧠 3. Bao phủ điều kiện quyết định（判断条件網羅） (Decision Coverage) hay gọi là  bao phủ phân nhánh (Branch Coverage)
-👉 Mỗi nhánh của điểm quyết định được thực thi ít nhất 1 lần, bao gồm cả nhánh true và false.
+① ホワイトボックステスト – Hộp trắng
 
-  🧠 4. Bao phủ điều kiện（条件網羅） (Condition Coverage)
-👉 Mỗi điều kiện trong điểm quyết định được thực thi ít nhất 1 lần với giá trị true và false.
+👉 Nhìn vào bên trong chương trình / Flowchart để kiểm tra các đường đi của chương trình.
 
-  🧠 5. Bao phủ điều kiện/Quyết định（条件網羅/判断条件網羅） (Decision/Condition Coverage)
-👉 Kết hợp cả bao phủ điều kiện và bao phủ quyết định, đảm bảo mỗi điều kiện và mỗi nhánh được thực thi ít nhất 1 lần.
+→ Chủ yếu nhớ 4 loại Coverage (網羅):
 
-  🧠 6. Bao phủ nhiều điều kiện（複数条件網羅） (Multiple Condition Coverage)
-👉 là kiểm thử trong đó tất cả các kết hợp của các điều kiện đúng và sai được thực thi ít nhất một lần.
+命令網羅 = Bao phủ lệnh → mỗi lệnh chạy ≥ 1 lần.
+判断条件網羅 = Bao phủ nhánh/quyết định → mỗi nhánh True + False.
+条件網羅 = Bao phủ điều kiện → mỗi điều kiện True + False.
+複数条件網羅 = Bao phủ tổ hợp điều kiện → tất cả tổ hợp True/False.
 
-  🧠 7. Kiểm thử hộp đen  
-👉 kiểm thử chỉ tập trung vào đầu vào và đầu ra của hệ thống, và xác nhận xem đầu ra có khớp với yêu cầu trong tài liệu đặc tả hay không, dựa trên các đầu vào nhất định
+📌 Mức độ từ đơn giản → chặt chẽ:
 
-  🧠 8. Kiểm thử Top-down và Bottom-up
-  Module là đơn vị phân chia chương trình theo chức năng, Các modulte này được chia thành 2 loại: module cấp trên (lớp cha) và module cấp dưới (lớp con).
-  + Module cấp trên: gọi các module khác.
-  + Module cấp dưới: được các module khác gọi.
+命令 → 判断 → 条件 → 複数条件
 
-👉 Top-down: kiểm thử từ lớp cao nhất xuống lớp thấp hơn.
-* trong quá trình kiểm tra thì các module cấp dưới có thể chưa hoàn thiện. vì vậy nên sử dụng Stub
-  + Stub: giả các lớp con chưa hoàn thiện để quá trình kiêm thử có thể tiếp tục.
+⚠️ Riêng 条件/判断条件網羅 = kết hợp Condition + Decision.
 
-👉 Bottom-up: kiểm thử từ lớp thấp nhất lên lớp cao hơn.
-* trong quá trình kiểm tra thì các module cấp trên có thể chưa hoàn thiện. vì vậy nên sử dụng Driver
-  + Driver: giả các lớp cha để kiểm thử các lớp con.
+② ブラックボックステスト – Hộp đen
 
-===============================================================
+👉 Không quan tâm bên trong chương trình chạy thế nào.
+Chỉ quan tâm:
+
+入力 (Input) → 出力 (Output)
+Kiểm tra xem:
+Đưa dữ liệu vào → kết quả có đúng với yêu cầu đặc tả không?
+Đặc biệt hay dùng:
+
+同値分割 = Chia lớp tương đương
+限界値分析 = Phân tích giá trị biên/giới hạn
+
+ 🧠 結合テスト – Kiểm thử tích hợp
+
+👉 Kiểm tra các Module khi kết hợp với nhau có hoạt động đúng không.
+
+Có 2 cách chính:
+① トップダウンテスト – Top-down
+
+👉 Trên → Dưới
+
+Module cấp trên → Module cấp dưới
+Module dưới chưa hoàn thiện → dùng Stub
+Stub = giả Module con
+
+📌 Nhớ:
+Top → Down → thiếu thằng Down → Stub
+② ボトムアップテスト – Bottom-up
+
+👉 Dưới → Trên
+
+Module cấp dưới → Module cấp trên
+Module trên chưa hoàn thiện → dùng Driver
+Driver = giả Module cha
+
+📌 Nhớ:
+Bottom → Up → thiếu thằng Up → Driver
+
+
+
+🧠受入テスト : người dùng kiểm thử và đánh giá
+
+
+
+
+🧠リクレーションテスト = Kiểm thử hồi quy
+SAU KHI SỬA ĐỔI 1 MODULE, CẦN KIỂM THỬ LẠI TOÀN BỘ HỆ THỐNG ĐỂ ĐẢM BẢO KHÔNG GÂY RA LỖI MỚI
+
+=======================================================
+
+
+
 ################################################################
 🔥🔥🔥🔥MÔ HÌNH PHÁT TRIỂN DỰ ÁN🔥🔥🔥🔥🔥
   🧠 1. ウォーターフォールモデル (Mô hình thác nước) Waterfall
@@ -2612,14 +2644,14 @@ TRONG KỲ THI FE
 
     🧠SƠ ĐỒ XU HƯỚNG
     - là một biểu đồ đường thể hiện tiến độ công việc và tình trạng tiêu thụ ngân sách của dự án. Gồm 2 đường biểu diễn dự kiến(nét đứt) và thực tế
-    🧠SƠ ĐỒ MŨI TÊN 
-    - Thể hiện trình tự công viêjc trong dự án bằng các mũi tên, trên ghi công việc, dưới ghi số ngày cần thiết 
+    🧠SƠ ĐỒ MŨI TÊN (ガントチャート)
+    - Thể hiện trình tự công việc trong dự án bằng các mũi tên, trên ghi công việc, dưới ghi số ngày cần thiết 
     🧠SƠ ĐỒ TIỀN TỐ
     -  phụ thuộc giữa các công việc một cách chi tiết hơn, giúp phân tích tiến độ của dự án, mô tả chính xác hơn từng công việc và quan hệ 
 
     👉👉SƠ ĐỒ MŨI TÊN ĐƯỢC SỬ DỤNG NHIỀU ĐỂ TÍNH "Ngày hoàn thành sớm nhất" và "Đường đi quan trọng"
 
-    👉 ĐƯỜNG ĐI QUAN TRỌNG  (クリティカルパス)
+    👉 ĐƯỜNG ĐI QUAN TRỌNG  (クリティカルパス) 
     Đường đi quan trọng là đoạn đường dài nhất trong các công việc của dự án, 
     là đường điquyết định thời gian hoàn thành dự án. Nếu công việc trong đường đi quan trọng bị trễ,
     toàn bộ dự án sẽ bị chậm lại.
@@ -3301,11 +3333,14 @@ Hiểu đơn giản:
 	👉 Công ty có thể phát triển trong tương lai không
 
 🧠🧠🧠🧠🧠🧠🧠🧠
+ KGI（Key Goal Indicator）CHỈ SỐ MỤC TIÊU CHÍNH 主要目標指標    
+👉KGI → chỉ số đo lường để biết mục tiêu có đạt hay không
+
 1️⃣ CSF（Critical Success Factors）YẾU TÔ THÀNH CÔNG QUAN TRỌNG 重要成功要因
 👉CSF → những điều kiện quan trọng để đạt mục tiêu
 
 2️⃣ KPI（Key Performance Indicator）CHỈ SỐ ĐO LƯỜNG HIỆU QUẢ CÔNG VIỆC 重要業績評価指標
-👉KPI → chỉ số đo lường để biết mục tiêu có đạt hay không
+👉KPI → chỉ số đo lường để biết mục tiêu CSF có đạt hay không
 
 
   ==============================================
@@ -3394,12 +3429,16 @@ CGM (Consumer Generated Media) là nội dung do người tiêu dùng tạo ra t
   5️⃣ カンパニー制組織 (Company-Based Organization) tổ chức theo công ty con
     - Tổ chức thành các công ty con độc lập, mỗi công ty con chịu trách nhiệm về lợi nhuận và thua lỗ của mình.
 
-   🧠 CÁC CHỨC DANH LÃNH ĐẠO 
+   🧠 CÁC CHỨC DANH LÃNH ĐẠO ノベーション
       1️⃣ CEO (Chief Executive Officer- 最高経営責任者) - Giám đốc điều hành
       2️⃣ CIO (Chief Information Officer- 最高情報責任者) - Giám đốc thông tin
       3️⃣ CFO (Chief Financial Officer- 最高財務責任者) - Giám đốc tài chính
       4️⃣ CTO (Chief Technology Officer- 最高技術責任者) - Giám đốc công nghệ
       5️⃣ CCO (Chief Compliance Officer- 最高コンプライアンス責任者) - Giám đốc tuân thủ
+
+      OR vs IE (Operations Research / Industrial Engineering)
+      - OR là  tối ưu hóa hoạt động kinh doanh, tập trung vào việc ra quyết định và giải quyết vấn đề.
+      - IE là tối ưu hóa quy trình sản xuất, tập trung vào việc cải thiện hiệu quả và năng suất trong sản xuất.
 
   OJT và Off-JT
   - OJT (On-the-Job Training) là đào tạo tại chỗ, học việc trực tiếp trong công việc hàng ngày.
@@ -4027,3 +4066,47 @@ Vd: ルートディレクトリ　
   - DMZ là một khu vực mạng được tách biệt khỏi mạng nội bộ, 
   thường được sử dụng để đặt các máy chủ công cộng như web server, email server, v.v., 
   giúp bảo vệ mạng nội bộ khỏi các mối đe dọa từ bên ngoài.
+
+
+  =+++++++++++++++++++++++++++++++++++++++++++
+  🔹損益分岐点（そんえきぶんきてん）— điểm hòa vốn.
+  1. Công thức cần nhớ
+  - Tỷ lệ chi phí biến động = Tổng chi phí biến động / Doanh thu
+  - Doanh thu hòa vốn = Chi phí cố định / (1 - Tỷ lệ chi phí biến động)
+  - Khi doanh thu thực tế vượt quá doanh thu hòa vốn, công ty bắt đầu có lợi nhuận.
+   VD: 
+   売上　700万
+   変動費　140万
+   固定費　500万
+    変動費率 = 140 ÷ 700 = 0.2 (tính nhanh 1400/700 = 0.2 )
+    Doanh thu hòa vốn = 500 ÷ (1 - 0.2) = 500 ÷ 0.8 = 625万
+    Doanh thu thực tế 700万 > 625万 → có lợi nhuận.
+
+    🔹Khấu hao mỗi năm 
+      １年間の減価償却費　＝　（取得価額　−　残存価額）÷ 耐用年数）
+                              giá mua - giá trị còn lại ÷ số năm sư dụng
+      例：取得価額　100万、残存価額　10万、耐用年数　5年
+      ＝（100万　−　10万）÷　5年
+      = 90万 ÷ 5年 = 18万/年
+
+
+    =++++++++++++++++++++++++++++++++++++++++++++
+    🧠ISO (Tổ chức tiếu chuẩn hóa quốc tế)
+      🔹ISO 9000 series: Hệ thống quản lý chất lượng.
+      🔹ISO 14000 series: Hệ thống quản lý môi trường.
+      🔹ISO/IEC 20000 series: Hệ thống quản lý dịch vụ IT.
+      🔹ISO/IEC 27000 series: Hệ thống quản lý bảo mật thông tin.
+    🧠JIS (Japan Industrial Standards - Tiêu chuẩn công nghiệp Nhật Bản)
+      🔹JIS Q 9000 series: Hệ thống quản lý chất lượng.
+      🔹JIS Q 14000 series: Hệ thống quản lý môi trường.
+      🔹JIS Q 20000 series: Hệ thống quản lý dịch vụ IT.
+      🔹JIS Q 27000 series: Hệ thống quản lý bảo mật thông tin.
+    🧠 IEEE (Institute of Electrical and Electronics Engineers - Tổ chức kỹ sư điện và điện tử)
+      🔹IEEE 802.3: Chuẩn Ethernet.
+      🔹IEEE 802.11: Chuẩn Wi-Fi.
+      🔹IEEE 802.15: Chuẩn mạng cá nhân không dây (WPAN).
+      🔹IEEE 802.16: Chuẩn mạng băng rộng không dây (WiMAX).
+    🧠IETF (Internet Engineering Task Force)
+      🔹IETF RFC (Request for Comments): Tài liệu mô tả các tiêu chuẩn và giao thức Internet.
+      
+
